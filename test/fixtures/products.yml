@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  unit: MyString
+zucker:
+  name: Zucker
+  unit: g
 
-two:
-  name: MyString
-  unit: MyString
+mehl:
+  name: Mehl
+  unit: g
