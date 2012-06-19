@@ -1,4 +1,6 @@
 FoodPacker::Application.routes.draw do
+  resources :reciepts
+
   resources :products
 
   # The priority is based upon order of creation:

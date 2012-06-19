@@ -1,0 +1,23 @@
+<h1>Listing reciepts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reciepts.each do |reciept| %>
+  <tr>
+    <td><%= reciept.name %></td>
+    <td><%= link_to 'Show', reciept %></td>
+    <td><%= link_to 'Edit', edit_reciept_path(reciept) %></td>
+    <td><%= link_to 'Destroy', reciept, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reciept', new_reciept_path %>
