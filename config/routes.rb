@@ -1,4 +1,6 @@
 FoodPacker::Application.routes.draw do
+  resources :ingredients
+
   resources :reciepts
 
   resources :products
