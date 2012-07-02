@@ -25,6 +25,9 @@ en:
     messages:
       updated: "Receipt was successfully updated."
       created: "Receipt was successfully created."
+    actions:
+      add_ingredient: "Add new ingredient"
+      remove_ingredient: "Remove this ingredient"
       
   users:
     new:

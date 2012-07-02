@@ -67,6 +67,22 @@ class ReceiptsControllerTest < ActionController::TestCase
     assert_redirected_to receipt_path(assigns(:receipt))
   end
   
+  test "should add ingredients through nested forms" do
+    assert_difference('@receipt.ingredients.count', 1) do
+      put :update, {id: @receipt.to_param, receipt: {"ingredients_attributes" => {"new_123" => {'quantity' => 2, 'product_id' => 1}}}}, {'user_id' => users(:foo).id}
+    end
+    assert_redirected_to receipt_path(assigns(:receipt))
+  end
+  
+  test "should delete ingredients through nesting" do
+    ingredient = ingredients(:two)
+    @receipt.ingredients << ingredient
+    assert_difference('@receipt.ingredients.count', -1) do
+      put :update, {id: @receipt.to_param, receipt: {"ingredients_attributes" => {"0" => {'id' => ingredient.id, '_destroy' => 1}}}}, {'user_id' => users(:foo).id}
+    end
+    assert_redirected_to receipt_path(assigns(:receipt))
+  end
+  
   test "should not update receipt if not logged in" do
     put :update, id: @receipt.to_param, receipt: @receipt.attributes
     assert_redirected_to login_url

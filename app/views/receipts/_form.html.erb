@@ -1,4 +1,4 @@
-<%= form_for(@receipt) do |f| %>
+<%= nested_form_for(@receipt) do |f| %>
   <% if @receipt.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@receipt.errors.count, "error") %> prohibited this receipt from being saved:</h2>
@@ -15,6 +15,18 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+<h2><%= Receipt.human_attribute_name('ingredients') %></h2>
+<%= f.fields_for :ingredients do |ingredients_fields| %>
+
+  <%= ingredients_fields.label :quantity %>
+  <%= ingredients_fields.text_field :quantity, :size => 5 %>
+  <%= ingredients_fields.label :product_id %>
+  <%= ingredients_fields.text_field :product_id %>
+  <%= ingredients_fields.link_to_remove t('receipts.actions.remove_ingredient') %>
+
+<% end %>
+
+<p><%= f.link_to_add t('receipts.actions.add_ingredient'), :ingredients %></p>
   <div class="actions">
     <%= f.submit %>
   </div>

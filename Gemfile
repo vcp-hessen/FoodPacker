@@ -10,6 +10,7 @@ gem 'rails-i18n'
 
 gem "nifty-generators", :group => :development
 gem "bcrypt-ruby", :require => "bcrypt"
+gem "nested_form"
 
 # Gems used only for assets and not required
 # in production environments by default.

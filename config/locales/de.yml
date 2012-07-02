@@ -25,6 +25,9 @@ de:
     messages:
       updated: "Rezept wurde gespeichert."
       created: "Rezept wurde angelegt."
+    actions:
+      add_ingredient: "Zutat hinzufügen"
+      remove_ingredient: "Diese Zutat löschen"
 
   users:
     new:
@@ -73,6 +76,9 @@ de:
       receipt:
         name: "Name"
         ingredients: "Zutaten"
+      ingredient:
+        quantity: "Menge"
+        product: "Produkt"
     errors:
       header: "Fehler"
       message: "Bitte korrigiere die folgenden Fehler:"
