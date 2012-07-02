@@ -9,6 +9,13 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div id="header">
+		<% if logged_in? %>
+		  <%= t('users.messages.welcome', :user => current_user.username) %>
+		  <%= link_to t('users.actions.edit'), edit_current_user_path %> or
+		  <%= link_to t('users.actions.logout'), logout_path %>
+		<% end %>
+	</div>
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

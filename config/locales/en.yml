@@ -38,9 +38,14 @@ en:
       update: "Update"
       email_address: "Email Address"
       confirm_pasword: "Confirm Password"
+    actions:
+      login: "Log in"
+      logout: "Log out"
+      edit: "Edit profile"
     messages:
       signed_up: "Account has been created. You are now logged in."
       updated: "You changes have been saved."
+      welcome: "Welcome %{user}."
   
   sessions:
     new:

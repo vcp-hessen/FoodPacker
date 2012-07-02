@@ -38,9 +38,14 @@ de:
       update: "Sichern"
       email_address: "Email Adresse"
       confirm_pasword: "Password bestätigen"
+    actions:
+      login: "Anmelden"
+      logout: "Abmelden"
+      edit: "Profil bearbeiten"
     messages:
       signed_up: "Registrierung abgeschlossen. Du bist jetzt angemeldet."
       updated: "Änderungen gespeichert."
+      welcome: "Willkommen %{user}."
 
   sessions:
     new:
