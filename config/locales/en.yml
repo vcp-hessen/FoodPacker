@@ -26,3 +26,14 @@ en:
   dashboard:
     index:
       reciepts: "List of receipts"
+      
+      
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: "should only contain letters, numbers, or .-_@"
+            email:
+              invalid: "should be a valid email address"

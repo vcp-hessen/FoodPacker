@@ -28,7 +28,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_require_well_formed_email
-    assert_equal [I18n.t('errors.messages.invalid')], new_user(:email => 'foo@bar@example.com').errors[:email]
+    assert_equal [I18n.t('activerecord.errors.models.user.attributes.email.invalid')], new_user(:email => 'foo@bar@example.com').errors[:email]
   end
 
   def test_validate_uniqueness_of_email
@@ -42,7 +42,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_validate_odd_characters_in_username
-    assert_equal ["should only contain letters, numbers, or .-_@"], new_user(:username => 'odd ^&(@)').errors[:username]
+    assert_equal [I18n.t('activerecord.errors.models.user.attributes.username.invalid')], new_user(:username => 'odd ^&(@)').errors[:username]
   end
 
   def test_validate_password_length

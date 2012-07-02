@@ -36,3 +36,11 @@ de:
       reciept:
         name: "Name"
         ingredients: "Zutaten"
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: "darf nur Buchstaben, Ziffern und '.-_@' enthalten"
+            email:
+              invalid: "muss eine gültige Email Adresse sein."
