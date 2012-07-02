@@ -1,5 +1,5 @@
-<h1>Sign up</h1>
+<h1><%= t('.title') %></h1>
 
-<p>Already have an account? <%= link_to "Log in", login_path %>.</p>
+<p><%= t('.have_account')%> <%= link_to t('.login'), login_path %>.</p>
 
 <%= render 'form' %>

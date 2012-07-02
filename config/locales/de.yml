@@ -23,6 +23,29 @@ de:
       show: "Anzeigen"
       back: "Zurück"
 
+  users:
+    new:
+      title: "Anmeldung"
+      have_account: "Bereits angemeldet?"
+      login: "Einloggen"
+    edit:
+      title: "Profil bearbeiten"
+    form:
+      signup: "Anmelden"
+      update: "Sichern"
+      email_address: "Email Adresse"
+      confirm_pasword: "Password bestätigen"
+    messages:
+      signed_up: "Anmeldung abgeschlossen. Du bist jetzt angemeldet."
+      updated: "Änderungen gespeichert."
+
+  session:
+    messages:
+      need_log_in: "Bitte einloggen um auf diese Seite zuzugreifen."
+      logged_in: "Erfolgreich angemeldet."
+      logged_out: "Abgemeldet."
+      invalid: "Zugangsdaten fehlerhaft."
+          
   dashboard:
     index:
       reciepts: "Rezeptliste"
@@ -37,6 +60,8 @@ de:
         name: "Name"
         ingredients: "Zutaten"
     errors:
+      header: "Fehler"
+      message: "Bitte korrigiere die folgenden Fehler:"
       models:
         user:
           attributes:

@@ -23,6 +23,29 @@ en:
       show: "Show"
       back: "Back"
       
+  users:
+    new:
+      title: "Sign up"
+      have_account: "Already have an account?"
+      login: "Log in"
+    edit:
+      title: "Update Profile"
+    form:
+      signup: "Sign Up"
+      update: "Update"
+      email_address: "Email Address"
+      confirm_pasword: "Confirm Password"
+    messages:
+      signed_up: "Account has been created. You are now logged in."
+      updated: "You changes have been saved."
+  
+  session:
+    messages:
+      need_log_in: "You need to log in to access this resource."
+      logged_in: "You have successfully logged in."
+      logged_out: "You have been logged out."
+      invalid: "Username and/or passsword wrong."
+    
   dashboard:
     index:
       reciepts: "List of receipts"
