@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "FoodPacker" %></title>
+    <title>FoodPacker <%= content_for?(:title) ? "- " + yield(:title) : "" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag :defaults %>
