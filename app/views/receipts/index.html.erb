@@ -1,0 +1,23 @@
+<h1><%= t(".title") %></h1>
+
+<table>
+  <tr>
+    <th><%= Receipt.human_attribute_name('name') %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @receipts.each do |receipt| %>
+  <tr>
+    <td><%= receipt.name %></td>
+    <td><%= link_to t('.show'), receipt %></td>
+    <td><%= link_to t('.edit'), edit_receipt_path(receipt) %></td>
+    <td><%= link_to t('.destroy'), receipt, confirm: t('.confirm'), method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('.new'), new_receipt_path %>

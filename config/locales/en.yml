@@ -4,27 +4,27 @@
 en:
   hello: "Hello world"
   
-  reciepts:
+  receipts:
     index: 
-      title: "Listing reciepts"
+      title: "Listing receipts"
       show: "Show"
       edit: "Edit"
       destroy: "Destroy"
       confirm: "Are you sure?"
-      new: "New reciept"
+      new: "New receipt"
     new:
-      title: "New reciept"
+      title: "New receipt"
       back: "Back"
     show:
       edit: "Edit"
       back: "Back"
     edit:
-      title: "Editing reciept"
+      title: "Editing receipt"
       show: "Show"
       back: "Back"
     messages:
-      updated: "Reciept was successfully updated."
-      created: "Reciept was successfully created."
+      updated: "Receipt was successfully updated."
+      created: "Receipt was successfully created."
       
   users:
     new:
@@ -51,7 +51,7 @@ en:
     
   dashboard:
     index:
-      reciepts: "List of receipts"
+      receipts: "List of receipts"
       
       
   activerecord:

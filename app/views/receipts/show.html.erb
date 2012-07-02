@@ -1,0 +1,8 @@
+<p>
+  <b><%= Receipt.human_attribute_name('name') %>:</b>
+  <%= @receipt.name %>
+</p>
+
+
+<%= link_to t('.edit'), edit_receipt_path(@receipt) %> |
+<%= link_to t('.back'), receipts_path %>

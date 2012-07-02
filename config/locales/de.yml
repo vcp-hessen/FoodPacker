@@ -4,7 +4,7 @@
 de:
   hello: "Hallo Welt"
   
-  reciepts:
+  receipts:
     index: 
       title: "Rezeptliste"
       show: "Anzeigen"
@@ -51,15 +51,15 @@ de:
           
   dashboard:
     index:
-      reciepts: "Rezeptliste"
+      receipts: "Rezeptliste"
 
   activerecord:
     models:
-      reciept: "Rezept"
+      receipt: "Rezept"
       product: "Produkt"
       ingredient: "Zutat"
     attributes:
-      reciept:
+      receipt:
         name: "Name"
         ingredients: "Zutaten"
     errors:
