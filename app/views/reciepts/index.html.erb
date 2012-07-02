@@ -1,8 +1,8 @@
-<h1>Listing reciepts</h1>
+<h1><%= t(".title") %></h1>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th><%= Reciept.human_attribute_name('name') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,13 +11,13 @@
 <% @reciepts.each do |reciept| %>
   <tr>
     <td><%= reciept.name %></td>
-    <td><%= link_to 'Show', reciept %></td>
-    <td><%= link_to 'Edit', edit_reciept_path(reciept) %></td>
-    <td><%= link_to 'Destroy', reciept, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to t('.show'), reciept %></td>
+    <td><%= link_to t('.edit'), edit_reciept_path(reciept) %></td>
+    <td><%= link_to t('.destroy'), reciept, confirm: t('.confirm'), method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Reciept', new_reciept_path %>
+<%= link_to t('.new'), new_reciept_path %>

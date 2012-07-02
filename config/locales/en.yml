@@ -3,3 +3,22 @@
 
 en:
   hello: "Hello world"
+  
+  reciepts:
+    index: 
+      title: "Listing reciepts"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirm: "Are you sure?"
+      new: "New reciept"
+    new:
+      title: "New reciept"
+      back: "Back"
+    show:
+      edit: "Edit"
+      back: "Back"
+    edit:
+      title: "Editing reciept"
+      show: "Show"
+      back: "Back"

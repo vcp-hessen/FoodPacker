@@ -1,6 +1,6 @@
-<h1>Editing reciept</h1>
+<h1><%= t('.title')%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @reciept %> |
-<%= link_to 'Back', reciepts_path %>
+<%= link_to t('.show'), @reciept %> |
+<%= link_to t('.back'), reciepts_path %>

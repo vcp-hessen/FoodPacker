@@ -3,3 +3,32 @@
 
 de:
   hello: "Hallo Welt"
+  
+  reciepts:
+    index: 
+      title: "Rezeptliste"
+      show: "Anzeigen"
+      edit: "Bearbeiten"
+      destroy: "Löschen"
+      confirm: "Bist Du sicher?"
+      new: "Neues Rezept"
+    new:
+      title: "Neues Rezept"
+      back: "Zurück"
+    show:
+      edit: "Bearbeiten"
+      back: "Zurück"
+    edit:
+      title: "Rezept bearbeiten"
+      show: "Anzeigen"
+      back: "Zurück"
+
+  activerecord:
+    models:
+      reciept: "Rezept"
+      product: "Produkt"
+      ingredient: "Zutat"
+    attributes:
+      reciept:
+        name: "Name"
+        ingredients: "Zutaten"
