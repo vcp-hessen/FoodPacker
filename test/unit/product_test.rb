@@ -16,4 +16,14 @@ class ProductTest < ActiveSupport::TestCase
     assert product2.errors[:name].any?
   end
   
+  test "product can not be deleted if referenced by ingredients" do
+    zucker = products(:zucker)
+    ingredient = Ingredient.create(quantity:50.0)
+    zucker.ingredients << ingredient
+    
+    zucker.destroy
+    assert ! zucker.destroyed?
+    assert zucker.errors[:base].any?
+  end
+  
 end
