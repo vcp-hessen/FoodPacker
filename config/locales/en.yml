@@ -42,7 +42,13 @@ en:
       signed_up: "Account has been created. You are now logged in."
       updated: "You changes have been saved."
   
-  session:
+  sessions:
+    new:
+      title: "Log in!"
+      no_account: "Don't have an account?"
+      sign_up: "Sign up"
+      name_or_email: "Username or email address"
+      login: "Log in"
     messages:
       need_log_in: "You need to log in to access this resource."
       logged_in: "You have successfully logged in."

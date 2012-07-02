@@ -6,15 +6,15 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to_target_or_default root_url, :notice => t("session.messages.logged_in")
+      redirect_to_target_or_default root_url, :notice => t("sessions.messages.logged_in")
     else
-      flash.now[:alert] = t("session.messages.invalid")
+      flash.now[:alert] = t("sessions.messages.invalid")
       render :action => 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => t("session.messages.logged_out")
+    redirect_to root_url, :notice => t("sessions.messages.logged_out")
   end
 end

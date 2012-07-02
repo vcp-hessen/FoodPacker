@@ -31,7 +31,7 @@ module ControllerAuthentication
   def login_required
     unless logged_in?
       store_target_location
-      redirect_to login_url, :alert => t("session.messages.need_log_in")
+      redirect_to login_url, :alert => t("sessions.messages.need_log_in")
     end
   end
 

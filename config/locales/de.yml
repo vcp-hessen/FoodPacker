@@ -42,7 +42,13 @@ de:
       signed_up: "Anmeldung abgeschlossen. Du bist jetzt angemeldet."
       updated: "Änderungen gespeichert."
 
-  session:
+  sessions:
+    new:
+      title: "Bitte einloggen"
+      no_account: "Noch keinen Account?"
+      sign_up: "Anmelden"
+      name_or_email: "Benutzername oder Emailadresse"
+      login: "Log in"
     messages:
       need_log_in: "Bitte einloggen um auf diese Seite zuzugreifen."
       logged_in: "Erfolgreich angemeldet."
