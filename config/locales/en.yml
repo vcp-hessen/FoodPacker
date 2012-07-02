@@ -22,3 +22,7 @@ en:
       title: "Editing reciept"
       show: "Show"
       back: "Back"
+      
+  dashboard:
+    index:
+      reciepts: "List of receipts"

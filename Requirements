@@ -1,0 +1,34 @@
+Rezept
+
+für je 10 Pers.
+
+-> Namen
+-> Zutaten -> Menge
+
+Produkte
+
+-> Name
+-> Einheit
+-> Masse ?
+
+
+Mengeneinheiten:
+- ml
+- g
+- Stk.
+
+
+Gruppe
+
+-> Namen
+-> Gruppennummer ?
+-> Teilnehmerzahl
+  -> Variabel ?
+-> Vegetarierzahl ?
+
+
+Kiste
+
+-> Namen
+-> Rezepte
+-> 1 Gruppe

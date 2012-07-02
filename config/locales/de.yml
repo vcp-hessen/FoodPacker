@@ -23,6 +23,10 @@ de:
       show: "Anzeigen"
       back: "Zurück"
 
+  dashboard:
+    index:
+      reciepts: "Rezeptliste"
+
   activerecord:
     models:
       reciept: "Rezept"
