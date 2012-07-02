@@ -28,18 +28,18 @@ de:
 
   users:
     new:
-      title: "Anmeldung"
-      have_account: "Bereits angemeldet?"
-      login: "Einloggen"
+      title: "Registrierung"
+      have_account: "Bereits registriert?"
+      login: "Anmelden"
     edit:
       title: "Profil bearbeiten"
     form:
-      signup: "Anmelden"
+      signup: "Registrieren"
       update: "Sichern"
       email_address: "Email Adresse"
       confirm_pasword: "Password bestätigen"
     messages:
-      signed_up: "Anmeldung abgeschlossen. Du bist jetzt angemeldet."
+      signed_up: "Registrierung abgeschlossen. Du bist jetzt angemeldet."
       updated: "Änderungen gespeichert."
 
   sessions:
