@@ -1,4 +1,7 @@
 class ReceiptsController < ApplicationController
+
+  before_filter :login_required
+
   # GET /receipts
   # GET /receipts.json
   def index
