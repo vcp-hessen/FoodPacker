@@ -22,6 +22,9 @@ en:
       title: "Editing reciept"
       show: "Show"
       back: "Back"
+    messages:
+      updated: "Reciept was successfully updated."
+      created: "Reciept was successfully created."
       
   users:
     new:

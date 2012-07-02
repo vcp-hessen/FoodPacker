@@ -44,7 +44,7 @@ class RecieptsController < ApplicationController
 
     respond_to do |format|
       if @reciept.save
-        format.html { redirect_to @reciept, notice: 'Reciept was successfully created.' }
+        format.html { redirect_to @reciept, notice: t('reciepts.messages.updated') }
         format.json { render json: @reciept, status: :created, location: @reciept }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class RecieptsController < ApplicationController
 
     respond_to do |format|
       if @reciept.update_attributes(params[:reciept])
-        format.html { redirect_to @reciept, notice: 'Reciept was successfully updated.' }
+        format.html { redirect_to @reciept, notice: t('reciepts.messages.updated') }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

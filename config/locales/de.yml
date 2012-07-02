@@ -22,6 +22,9 @@ de:
       title: "Rezept bearbeiten"
       show: "Anzeigen"
       back: "Zurück"
+    messages:
+      updated: "Rezept wurde gespeichert."
+      created: "Rezept wurde angelegt."
 
   users:
     new:
