@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  layout "sign"
+
   def new
   end
 

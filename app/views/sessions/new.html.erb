@@ -1,13 +1,36 @@
-<% title t('.title') %>
-
-<%= form_tag sessions_path do %>
-  <p>
-    <%= label_tag :login, t('.name_or_email') %><br />
-    <%= text_field_tag :login, params[:login] %>
-  </p>
-  <p>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <p><%= submit_tag t('.login') %></p>
-<% end %>
+<div class="block" id="block-login">
+  <h2>Login Box</h2>
+  <div class="content login">
+    <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+    <%= form_tag sessions_path, :class => "form login" do %>
+      <div class="group wat-cf">
+        <div class="left">
+          <label class="label right">Login</label>
+        </div>
+        <div class="right">
+          <%= text_field_tag :login, params[:login] %>
+        </div>
+      </div>
+      <div class="group wat-cf">
+        <div class="left">
+          <label class="label right">Password</label>
+        </div>
+        <div class="right">
+          <%= password_field_tag :password %>
+        </div>
+      </div>
+      <div class="group navform wat-cf">
+        <div class="right">
+          <button class="button" type="submit">
+            <%= image_tag "icons/key.png" %> <%= t('.login') %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
