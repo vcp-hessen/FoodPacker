@@ -48,7 +48,6 @@ de:
     messages:
       signed_up: "Registrierung abgeschlossen. Du bist jetzt angemeldet."
       updated: "Änderungen gespeichert."
-      welcome: "Willkommen %{user}."
 
   sessions:
     new:

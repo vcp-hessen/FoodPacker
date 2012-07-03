@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FoodPacker <%= content_for?(:title) ? "- " + yield(:title) : "" %></title>
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag :defaults %>
-    <%= csrf_meta_tag %>
-    <%= yield(:head) %>
-  </head>
-  <body>
+<head>
+  <title>Food Packer <%= content_for?(:title) ? "- " + yield(:title) : "" %></title>
+  <%= stylesheet_link_tag 'web_app_theme' %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
     <div id="header">
-		<% if logged_in? %>
-		  <%= t('users.messages.welcome', :user => current_user.username) %>
-		  <%= link_to t('users.actions.edit'), edit_current_user_path %> or
-		  <%= link_to t('users.actions.logout'), logout_path %>
-		<% end %>
-	</div>
-    <div id="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= yield %>
-    </div>
-  </body>
+      <h1><a href="/">Food Packer</a></h1>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+          <% if logged_in? %>
+          <li><a href="<%= edit_current_user_path %>"><%= t("web-app-theme.profile", :default => "Profile") %></a></li>
+          <li><a href="<%= logout_path %>" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf"></ul>
+      </div>
+    </div>    
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> Tobias Klonk.</p>
+          </div>      
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>    
+  </div>
+</body>
 </html>

@@ -48,7 +48,6 @@ en:
     messages:
       signed_up: "Account has been created. You are now logged in."
       updated: "You changes have been saved."
-      welcome: "Welcome %{user}."
   
   sessions:
     new:
