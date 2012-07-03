@@ -50,6 +50,10 @@ de:
       receipts: "Rezeptliste"
       products: "Produktliste"
 
+  navigation:
+    receipts: "Rezepte"
+    products: "Produkte"
+
   activerecord:
     models:
       receipt: "Rezept"

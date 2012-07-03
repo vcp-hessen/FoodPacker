@@ -19,4 +19,19 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+  
+  def main_menu(menu_items)
+    menu = ""
+    menu_items.each_with_index do |controller,index|
+      classes = ""
+      if (index == 0)
+        classes = "first"
+      end
+      if (params[:controller] == controller)
+        classes += ", active"
+      end 
+      menu += content_tag(:li, link_to( t("navigation.#{controller}"), url_for(:controller => controller)), :class => classes)
+    end
+    menu.html_safe
+  end
 end
