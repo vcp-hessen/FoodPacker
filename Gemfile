@@ -23,6 +23,7 @@ end
 
 group :production do
   gem 'fcgi'
+  gem 'activerecord-mysql2-adapter'
 end
 
 gem 'jquery-rails'

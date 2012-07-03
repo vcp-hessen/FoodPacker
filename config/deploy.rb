@@ -54,7 +54,7 @@ namespace :db do
     
     db_config = <<-EOF
 base: &base
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   username: #{database_username}
   password: #{database_password}
