@@ -64,6 +64,7 @@ GEM
     mime-types (1.18)
     mocha (0.9.12)
     multi_json (1.3.6)
+    mysql2 (0.3.11)
     nested_form (0.2.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -140,6 +141,7 @@ DEPENDENCIES
   fcgi
   jquery-rails
   mocha
+  mysql2
   nested_form
   nifty-generators
   rails (= 3.1.1)
