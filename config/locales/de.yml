@@ -5,23 +5,6 @@ de:
   hello: "Hallo Welt"
   
   receipts:
-    index: 
-      title: "Rezeptliste"
-      show: "Anzeigen"
-      edit: "Bearbeiten"
-      destroy: "Löschen"
-      confirm: "Bist Du sicher?"
-      new: "Neues Rezept"
-    new:
-      title: "Neues Rezept"
-      back: "Zurück"
-    show:
-      edit: "Bearbeiten"
-      back: "Zurück"
-    edit:
-      title: "Rezept bearbeiten"
-      show: "Anzeigen"
-      back: "Zurück"
     messages:
       updated: "Rezept wurde gespeichert."
       created: "Rezept wurde angelegt."

@@ -5,23 +5,6 @@ en:
   hello: "Hello world"
   
   receipts:
-    index: 
-      title: "Listing receipts"
-      show: "Show"
-      edit: "Edit"
-      destroy: "Destroy"
-      confirm: "Are you sure?"
-      new: "New receipt"
-    new:
-      title: "New receipt"
-      back: "Back"
-    show:
-      edit: "Edit"
-      back: "Back"
-    edit:
-      title: "Editing receipt"
-      show: "Show"
-      back: "Back"
     messages:
       updated: "Receipt was successfully updated."
       created: "Receipt was successfully created."

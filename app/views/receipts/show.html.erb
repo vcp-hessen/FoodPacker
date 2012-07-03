@@ -1,17 +1,31 @@
-<% title @receipt.name %>
-<p>
-  <b><%= Receipt.human_attribute_name('name') %>:</b>
-  <%= @receipt.name %>
-</p>
-<h2><%= Receipt.human_attribute_name('ingredients') %></h2>
-<table>
-<% @receipt.ingredients.each do |ingredient| %>
-	<tr>
-		<td><%= ingredient.quantity %></td>
-		<td><%= ingredient.product.unit %></td>
-		<td><%= ingredient.product.name %></td>
-	</tr>
-<% end %>
-</table>
-<%= link_to t('.edit'), edit_receipt_path(@receipt) %> |
-<%= link_to t('.back'), receipts_path %>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", receipts_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_receipt_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", receipt_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <h2><%= @receipt.name %></h2>
+        <h3><%= Receipt.human_attribute_name('ingredients') %></h3>
+		<table>
+		<% @receipt.ingredients.each do |ingredient| %>
+			<tr>
+				<td><%= ingredient.quantity %></td>
+				<td><%= ingredient.product.unit %></td>
+				<td><%= ingredient.product.name %></td>
+			</tr>
+		<% end %>
+		</table>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_receipt_path(@receipt), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), receipt_path(@receipt), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
