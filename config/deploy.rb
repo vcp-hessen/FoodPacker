@@ -17,6 +17,10 @@ set :use_sudo, false
 set :rails_env, :production
 ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "foodpack_rsa")]
 
+set :default_environment, {
+  'PATH' => "/package/host/localhost/ruby-1.9.3/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH:"
+}
+
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
