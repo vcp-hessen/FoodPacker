@@ -3,7 +3,15 @@
   <b><%= Receipt.human_attribute_name('name') %>:</b>
   <%= @receipt.name %>
 </p>
-
-
+<h2><%= Receipt.human_attribute_name('ingredients') %></h2>
+<table>
+<% @receipt.ingredients.each do |ingredient| %>
+	<tr>
+		<td><%= ingredient.quantity %></td>
+		<td><%= ingredient.product.unit %></td>
+		<td><%= ingredient.product.name %></td>
+	</tr>
+<% end %>
+</table>
 <%= link_to t('.edit'), edit_receipt_path(@receipt) %> |
 <%= link_to t('.back'), receipts_path %>
