@@ -66,6 +66,7 @@ de:
   dashboard:
     index:
       receipts: "Rezeptliste"
+      products: "Produktliste"
 
   activerecord:
     models:
