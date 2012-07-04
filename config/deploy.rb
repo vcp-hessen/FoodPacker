@@ -32,7 +32,7 @@ namespace :deploy do
  task :start do ; end
  task :stop do ; end
  task :restart, :roles => :app, :except => { :no_release => true } do
-   run "touch #{File.join(current_path,'tmp','restart.txt')}"
+   run "if [ -e #{shared_path}/pids/server.pid ]; then kill `cat #{shared_path}/pids/server.pid`; fi"
  end
 
 end
