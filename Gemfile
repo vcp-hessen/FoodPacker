@@ -12,6 +12,7 @@ gem "nifty-generators", :group => :development
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "nested_form"
 gem 'web-app-theme', '~> 0.8.0'
+gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.

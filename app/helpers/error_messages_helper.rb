@@ -12,6 +12,14 @@ module ErrorMessagesHelper
       end
     end
   end
+  
+  def error_span_for(model, attribute)
+    if model.errors[attribute].present?
+      content_tag :span, :class => 'error_messages' do
+        model.errors[attribute].join(", ")
+      end
+    end
+  end
 
   module FormBuilderAdditions
     def error_messages(options = {})

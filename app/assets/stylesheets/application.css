@@ -5,3 +5,37 @@
  *= require_self
  *= require web_app_theme
 */
+
+.error {
+	border: 1px solid #fbb;
+  background-color: #fdd;
+}
+
+.error_messages {
+	color: red;
+	font-weight: bold;
+}
+
+.form input.string, {
+border-right: 1px solid #DDD;
+border-bottom: 1px solid #DDD;
+border-top: 2px solid #CCC;
+border-left: 2px solid #CCC;
+width: 99%;
+}
+
+.form input.string, {
+width: 100%;
+border-width: 1px;
+border-style: solid;
+}
+
+.form input.string {
+font-size: 1.2em;
+padding: 1px 0;
+margin: 0;
+}
+
+.form input {
+font-size: 1.2em;
+}
