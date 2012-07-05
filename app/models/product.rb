@@ -15,5 +15,9 @@ class Product < ActiveRecord::Base
       return false
     end
   end
-
+  
+  def name_with_unit
+    name + " (" + unit + ")"
+  end
+  
 end

@@ -26,4 +26,9 @@ class ProductTest < ActiveSupport::TestCase
     assert zucker.errors[:base].any?
   end
   
+  test "product has name with unit" do
+    zucker = products(:zucker)
+    
+    assert zucker.name_with_unit == "Zucker (g)"
+  end
 end

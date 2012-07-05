@@ -12,7 +12,7 @@
   <%= ingredients_fields.label :quantity %>
   <%= ingredients_fields.text_field :quantity, :size => 5 %>
   <%= ingredients_fields.label :product_id %>
-  <%= ingredients_fields.collection_select :product_id, Product.all, :id, :name %>
+  <%= ingredients_fields.collection_select :product_id, Product.all, :id, :name_with_unit %>
   <%= ingredients_fields.link_to_remove t('receipts.actions.remove_ingredient') %>
 
 <% end %>
