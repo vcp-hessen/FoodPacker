@@ -41,4 +41,45 @@ class GroupTest < ActiveSupport::TestCase
     assert group.errors[:participants_count].empty?, "Error for participants_count 1"
   end
   
+  test "hunger_factor must be a number" do
+    group = groups(:group)
+    group.hunger_factor = "foo"
+    
+    assert group.invalid?
+    assert group.errors[:hunger_factor].any?
+  end
+  
+  test "hunger_factor must be between 0.4 and 1.6" do
+    group = groups(:group)
+    group.hunger_factor = 0.0
+    
+    assert group.invalid?
+    assert group.errors[:hunger_factor].any?
+    
+    group.hunger_factor = -0.1
+    
+    assert group.invalid?
+    assert group.errors[:hunger_factor].any?
+    
+    group.hunger_factor = 0.4
+    
+    assert group.valid?
+    assert group.errors[:hunger_factor].empty?
+    
+    group.hunger_factor = 1.0
+    
+    assert group.valid?
+    assert group.errors[:hunger_factor].empty?
+    
+    group.hunger_factor = 1.6
+    
+    assert group.valid?
+    assert group.errors[:hunger_factor].empty?
+    
+    group.hunger_factor = 1.62
+    
+    assert group.invalid?
+    assert group.errors[:hunger_factor].any?
+  end
+  
 end
