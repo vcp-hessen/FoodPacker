@@ -40,6 +40,9 @@ de:
   groups:
     singular: "Gruppe"
     plural: "Gruppen"
+    messages:
+      updated: "Gruppe wurde gespeichert."
+      created: "Gruppe wurde angelegt."
     descriptions:
       name: "Der Gruppenname (muss eindeutig sein)"
       participants_count: "Zahl der Gruppenteilnehmer (> 0)"
@@ -48,6 +51,9 @@ de:
   products:
     singular: "Produkt"
     plural: "Produkte"
+    messages:
+      updated: "Produkt wurde gespeichert."
+      created: "Produkt wurde angelegt."
     
   ingredients:
     singular: "Zutat"

@@ -40,6 +40,9 @@ en:
   groups:
     singular: "Group"
     plural: "Groups"
+    messages:
+      updated: "Group was successfully updated."
+      created: "Group was successfully created."
     descriptions:
       name: "The name of the group (must be unique)"
       participants_count: "Count of group participants (> 0)"
@@ -48,6 +51,9 @@ en:
   products:
     singular: "Product"
     plural: "products"
+    messages:
+      updated: "Product was successfully updated."
+      created: "Product was successfully created."
 
   ingredients:
     singular: "Ingredient"

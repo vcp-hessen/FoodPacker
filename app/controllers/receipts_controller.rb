@@ -47,7 +47,7 @@ class ReceiptsController < ApplicationController
 
     respond_to do |format|
       if @receipt.save
-        format.html { redirect_to @receipt, notice: t('receipts.messages.updated') }
+        format.html { redirect_to @receipt, notice: t('receipts.messages.created') }
         format.json { render json: @receipt, status: :created, location: @receipt }
       else
         format.html { render action: "new" }
