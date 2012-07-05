@@ -8,6 +8,7 @@ de:
     messages:
       updated: "Rezept wurde gespeichert."
       created: "Rezept wurde angelegt."
+      perpeople: "für 10 Personen"
     actions:
       add_ingredient: "Zutat hinzufügen"
       remove_ingredient: "Diese Zutat löschen"

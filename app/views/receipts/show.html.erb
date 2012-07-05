@@ -11,6 +11,7 @@
       
         <h2><%= @receipt.name %></h2>
         <h3><%= Receipt.human_attribute_name('ingredients') %></h3>
+		<em><%= t('receipts.messages.perpeople')%></em>
 		<table>
 		<% @receipt.ingredients.each do |ingredient| %>
 			<tr>

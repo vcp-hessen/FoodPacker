@@ -6,6 +6,7 @@
   </div>
   <div class="group">
 <h2><%= Receipt.human_attribute_name('ingredients') %></h2>
+<em><%= t('receipts.messages.perpeople')%></em>
 <%= f.fields_for :ingredients do |ingredients_fields| %>
 
   <%= ingredients_fields.label :quantity %>
