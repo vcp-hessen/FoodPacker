@@ -54,6 +54,7 @@ de:
   navigation:
     receipts: "Rezepte"
     products: "Produkte"
+    groups: "Gruppen"
 
   activerecord:
     models:
