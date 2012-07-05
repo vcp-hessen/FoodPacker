@@ -96,6 +96,9 @@ de:
       group:
         participants_count: "Teilnehmerzahl"
         hunger_factor: "Mampf-Faktor"
+      product:
+        name: "Name"
+        unit: "Einheit"
     errors:
       header: "Fehler"
       message: "Bitte korrigiere die folgenden Fehler:"
