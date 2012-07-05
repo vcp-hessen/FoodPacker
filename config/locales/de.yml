@@ -11,6 +11,7 @@ de:
       updated: "Rezept wurde gespeichert."
       created: "Rezept wurde angelegt."
       perpeople: "für 10 Personen"
+      error: "Das Rezept konnte nicht gespeichert werden. Bitte Fehler beheben"
     actions:
       add_ingredient: "Zutat hinzufügen"
       remove_ingredient: "Diese Zutat löschen"
@@ -43,6 +44,7 @@ de:
     messages:
       updated: "Gruppe wurde gespeichert."
       created: "Gruppe wurde angelegt."
+      error: "Die Gruppe konnte nicht gespeichert werden. Bitte Fehler beheben"
     descriptions:
       name: "Der Gruppenname (muss eindeutig sein)"
       participants_count: "Zahl der Gruppenteilnehmer (> 0)"
@@ -54,6 +56,7 @@ de:
     messages:
       updated: "Produkt wurde gespeichert."
       created: "Produkt wurde angelegt."
+      error: "Das Produkt konnte nicht gespeichert werden. Bitte Fehler beheben"
     
   ingredients:
     singular: "Zutat"

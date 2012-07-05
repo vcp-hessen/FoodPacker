@@ -11,6 +11,7 @@ en:
       updated: "Receipt was successfully updated."
       created: "Receipt was successfully created."
       perpeople: "per 10 people"
+      error: "The receipt could not be save. Please correct the errors below."
     actions:
       add_ingredient: "Add new ingredient"
       remove_ingredient: "Remove this ingredient"
@@ -43,6 +44,7 @@ en:
     messages:
       updated: "Group was successfully updated."
       created: "Group was successfully created."
+      error: "The group could not be save. Please correct the errors below."
     descriptions:
       name: "The name of the group (must be unique)"
       participants_count: "Count of group participants (> 0)"
@@ -54,6 +56,7 @@ en:
     messages:
       updated: "Product was successfully updated."
       created: "Product was successfully created."
+      error: "The product could not be save. Please correct the errors below."
 
   ingredients:
     singular: "Ingredient"

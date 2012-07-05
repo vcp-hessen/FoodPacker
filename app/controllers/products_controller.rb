@@ -50,7 +50,10 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: t('products.messages.created') }
         format.json { render json: @product, status: :created, location: @product }
       else
-        format.html { render action: "new" }
+        format.html { 
+          flash.now[:error] = t('products.messages.error')
+          render action: "new"
+          }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -66,7 +69,10 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: t('products.messages.updated') }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        format.html { 
+          flash.now[:error] = t('products.messages.error')
+          render action: "edit"
+          }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end

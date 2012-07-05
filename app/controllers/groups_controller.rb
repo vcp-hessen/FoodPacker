@@ -47,7 +47,10 @@ class GroupsController < ApplicationController
         format.html { redirect_to @group, notice: t('groups.messages.created') }
         format.json { render json: @group, status: :created, location: @group }
       else
-        format.html { render action: "new", error: '' }
+        format.html { 
+          flash.now[:error] = t('groups.messages.error')
+          render action: "new"
+          }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +66,10 @@ class GroupsController < ApplicationController
         format.html { redirect_to @group, notice: t('groups.messages.updated') }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        format.html { 
+          flash.now[:error] = t('groups.messages.error')
+          render action: "edit"
+          }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end

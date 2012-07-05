@@ -50,7 +50,10 @@ class ReceiptsController < ApplicationController
         format.html { redirect_to @receipt, notice: t('receipts.messages.created') }
         format.json { render json: @receipt, status: :created, location: @receipt }
       else
-        format.html { render action: "new" }
+        format.html {
+          flash.now[:error] = t('receipts.messages.error')
+          render action: "new"
+          }
         format.json { render json: @receipt.errors, status: :unprocessable_entity }
       end
     end
@@ -66,7 +69,10 @@ class ReceiptsController < ApplicationController
         format.html { redirect_to @receipt, notice: t('receipts.messages.updated') }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        format.html { 
+          flash.now[:error] = t('receipts.messages.error')
+          render action: "edit"
+          }
         format.json { render json: @receipt.errors, status: :unprocessable_entity }
       end
     end
