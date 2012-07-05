@@ -60,6 +60,7 @@ de:
       receipt: "Rezept"
       product: "Produkt"
       ingredient: "Zutat"
+      group: "Gruppe"
     attributes:
       receipt:
         name: "Name"
@@ -67,6 +68,9 @@ de:
       ingredient:
         quantity: "Menge"
         product: "Produkt"
+      group:
+        participants_count: "Teilnehmerzahl"
+        hunger_factor: "Mampf-Faktor"
     errors:
       header: "Fehler"
       message: "Bitte korrigiere die folgenden Fehler:"
