@@ -43,5 +43,5 @@ gem 'capistrano'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem "mocha", :require => false
 end
-gem "mocha", :group => :test
