@@ -16,8 +16,6 @@ FoodPacker::Application.routes.draw do
   
   get "dashboard/index"
 
-  resources :ingredients
-
   resources :receipts
 
   resources :products
