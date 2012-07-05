@@ -26,7 +26,7 @@
             <%= link_to receipt.name, receipt_path(receipt) %>
           </td>
                     <td>
-            <%= receipt.created_at %>
+            <%= l(receipt.created_at) %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", receipt_path(receipt) %> |
