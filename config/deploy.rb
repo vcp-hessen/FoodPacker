@@ -39,6 +39,7 @@ end
 
 before "deploy:setup", "db:configure"
 after "deploy:update_code", "db:symlink"
+after "deploy", "deploy:migrate"
 
 set(:database_username, user)
 set(:development_database) { application + "_development" }
