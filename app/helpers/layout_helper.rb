@@ -30,7 +30,7 @@ module LayoutHelper
       if (params[:controller] == controller)
         classes += ", active"
       end 
-      menu += content_tag(:li, link_to( t("navigation.#{controller}"), url_for(:controller => controller)), :class => classes)
+      menu += content_tag(:li, link_to( t("#{controller}.plural"), url_for(:controller => controller)), :class => classes)
     end
     menu.html_safe
   end

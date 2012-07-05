@@ -5,6 +5,8 @@ en:
   hello: "Hello world"
   
   receipts:
+    singular: "Receipt"
+    plural: "Receipts"
     messages:
       updated: "Receipt was successfully updated."
       created: "Receipt was successfully created."
@@ -14,6 +16,8 @@ en:
       remove_ingredient: "Remove this ingredient"
       
   users:
+    singular: "User"
+    plural: "Users"
     new:
       title: "Sign up"
       have_account: "Already have an account?"
@@ -34,10 +38,20 @@ en:
       updated: "You changes have been saved."
   
   groups:
+    singular: "Group"
+    plural: "Groups"
     descriptions:
       name: "The name of the group (must be unique)"
       participants_count: "Count of group participants (> 0)"
       hunger_factor: "Factor to multiplicate all ingredient quantities for this group with (> 0.4 < 1.6)"
+      
+  products:
+    singular: "Product"
+    plural: "products"
+
+  ingredients:
+    singular: "Ingredient"
+    plural: "Ingredients"
   
   sessions:
     new:
@@ -56,11 +70,7 @@ en:
     index:
       receipts: "List of receipts"
       products: "List of products"
-      
-  navigation:
-    receipts: "Receipts"
-    products: "Products"
-    
+
   activerecord:
     errors:
       models:

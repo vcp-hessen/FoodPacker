@@ -5,6 +5,8 @@ de:
   hello: "Hallo Welt"
   
   receipts:
+    singular: "Rezept"
+    plural: "Rezepte"
     messages:
       updated: "Rezept wurde gespeichert."
       created: "Rezept wurde angelegt."
@@ -14,6 +16,8 @@ de:
       remove_ingredient: "Diese Zutat löschen"
 
   users:
+    singular: "Benutzer"
+    plural: "Benutzer"
     new:
       title: "Registrierung"
       have_account: "Bereits registriert?"
@@ -34,11 +38,21 @@ de:
       updated: "Änderungen gespeichert."
 
   groups:
+    singular: "Gruppe"
+    plural: "Gruppen"
     descriptions:
       name: "Der Gruppenname (muss eindeutig sein)"
       participants_count: "Zahl der Gruppenteilnehmer (> 0)"
       hunger_factor: "Mit diesen Faktor werden Lebensmittelmengen multipliziert (> 0.4 < 1.6)"
       
+  products:
+    singular: "Produkt"
+    plural: "Produkte"
+    
+  ingredients:
+    singular: "Zutat"
+    plural: "Zutaten"
+    
   sessions:
     new:
       title: "Bitte einloggen"
@@ -56,11 +70,6 @@ de:
     index:
       receipts: "Rezeptliste"
       products: "Produktliste"
-
-  navigation:
-    receipts: "Rezepte"
-    products: "Produkte"
-    groups: "Gruppen"
 
   activerecord:
     models:

@@ -7,7 +7,7 @@
     </ul>
   </div>          
   <div class="content">            
-    <h2 class="title"><%= t("web-app-theme.edit", :default => "Edit") %> Receipt</h2>
+    <h2 class="title"><%= t("web-app-theme.edit", :default => "Edit") + " " + t('receipts.singular') %></h2>
     <div class="inner">
       <%= nested_form_for @receipt, :url => receipt_path(@receipt), :html => { :class => :form } do |f| -%>
         <%= render :partial => "form", :locals => {:f => f} %>
