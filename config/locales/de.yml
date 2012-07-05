@@ -33,6 +33,12 @@ de:
       signed_up: "Registrierung abgeschlossen. Du bist jetzt angemeldet."
       updated: "Änderungen gespeichert."
 
+  groups:
+    descriptions:
+      name: "Der Gruppenname (muss eindeutig sein)"
+      participants_count: "Zahl der Gruppenteilnehmer (> 0)"
+      hunger_factor: "Mit diesen Faktor werden Lebensmittelmengen multipliziert (> 0.4 < 1.6)"
+      
   sessions:
     new:
       title: "Bitte einloggen"

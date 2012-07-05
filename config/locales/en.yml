@@ -33,6 +33,12 @@ en:
       signed_up: "Account has been created. You are now logged in."
       updated: "You changes have been saved."
   
+  groups:
+    descriptions:
+      name: "The name of the group (must be unique)"
+      participants_count: "Count of group participants (> 0)"
+      hunger_factor: "Factor to multiplicate all ingredient quantities for this group with (> 0.4 < 1.6)"
+  
   sessions:
     new:
       title: "Log in!"
