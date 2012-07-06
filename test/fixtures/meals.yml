@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+breakfast:
+  name: "Breakfast"
+  time: 2012-07-06 09:00:00
+  receipt_id: 1
+
+lunch:
+  name: "Lunch"
+  time: 2012-07-06 12:30:00
+  receipt_id: 2
+  alt_receipt_id: 3
+
+supper:
+  name: "Supper"
+  time: 2012-07-06 18:00:00
+  receipt_id: 3
