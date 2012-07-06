@@ -51,7 +51,7 @@ class MealsController < ApplicationController
         format.json { render json: @meal, status: :created, location: @meal }
       else
         format.html { 
-          flash.now[:error] = t('errors.template.header', model: t('meals.singular'), count: @group.errors.count)
+          flash.now[:error] = t('errors.template.header', model: t('meals.singular'), count: @meal.errors.count)
           render action: "new"
           }
         format.json { render json: @meal.errors, status: :unprocessable_entity }
@@ -70,7 +70,7 @@ class MealsController < ApplicationController
         format.json { head :ok }
       else
         format.html { 
-          flash.now[:error] = t('errors.template.header', model: t('meals.singular'), count: @product.errors.count)
+          flash.now[:error] = t('errors.template.header', model: t('meals.singular'), count: @meal.errors.count)
           render action: "edit"
           }
         format.json { render json: @meal.errors, status: :unprocessable_entity }
