@@ -9,5 +9,8 @@ class GroupMeal < ActiveRecord::Base
   validates :receipt_id, presence: true
   validates :hunger_factor, presence: true
   validates :participants_count_deviation, presence: true
-
+  
+  validates :participants_count_deviation, numericality: { :only_integer => true }
+  validates :hunger_factor, numericality: {greater_than_or_equal_to: 0.4, less_than_or_equal_to: 1.6}
+  
 end
