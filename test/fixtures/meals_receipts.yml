@@ -1,0 +1,15 @@
+one:
+  meal_id: 1
+  receipt_id: 1
+
+two:
+  meal_id: 2
+  receipt_id: 2
+
+three:
+  meal_id: 2
+  receipt_id: 3
+
+four:
+  meal_id: 3
+  receipt_id: 3

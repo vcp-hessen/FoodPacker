@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120706085940) do
+ActiveRecord::Schema.define(:version => 20120706185506) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -32,11 +32,17 @@ ActiveRecord::Schema.define(:version => 20120706085940) do
   create_table "meals", :force => true do |t|
     t.string   "name"
     t.datetime "time"
-    t.integer  "receipt_id"
-    t.integer  "alt_receipt_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "meals_receipts", :id => false, :force => true do |t|
+    t.integer "meal_id"
+    t.integer "receipt_id"
+  end
+
+  add_index "meals_receipts", ["meal_id", "receipt_id"], :name => "index_meals_receipts_on_meal_id_and_receipt_id"
+  add_index "meals_receipts", ["receipt_id", "meal_id"], :name => "index_meals_receipts_on_receipt_id_and_meal_id"
 
   create_table "products", :force => true do |t|
     t.string   "name"

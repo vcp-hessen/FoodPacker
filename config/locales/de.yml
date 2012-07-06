@@ -70,8 +70,7 @@ de:
     singular: "Mahlzeit"
     plural: "Mahlzeiten"
     descriptions:
-      receipt: "Das Rezept für diese Mahlzeit."
-      alt_receipt: "Ein alternatives Rezept. Wird hier ein Rezept eingestellt taucht bei allen Gruppen die Wahlmöglichkeit auf."
+      receipts: "Mögliche Rezepte für diese Mahlzeit. Sind mehrere gegeben wird das zu verwendende Rezept pro Gruppe angegeben."
     
   sessions:
     new:
@@ -114,8 +113,7 @@ de:
       meal:
         name: "Name"
         time: "Zeitpunkt"
-        receipt: "Rezept"
-        alt_receipt: "Alternatives Rezept"
+        receipts: "Rezeptalternativen"
     errors:
       header: "Fehler"
       message: "Bitte korrigiere die folgenden Fehler:"

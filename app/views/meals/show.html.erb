@@ -20,14 +20,10 @@
         </p>
 
         <p>
-          <b><%= t("activerecord.attributes.meal.receipt_id", :default => t("activerecord.labels.receipt_id", :default => "Receipt")) %>:</b>
-          <%= @meal.receipt_id %>
+          <b><%= t("activerecord.attributes.meal.receipts", :default => t("activerecord.labels.receipts", :default => "Receipts")) %>:</b>
+          <%= @meal.receipts.collect(&:name).to_sentence %>
         </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.meal.alt_receipt_id", :default => t("activerecord.labels.alt_receipt_id", :default => "Alt receipt")) %>:</b>
-          <%= @meal.alt_receipt_id %>
-        </p>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_meal_path(@meal), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), meal_path(@meal), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

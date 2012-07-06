@@ -69,6 +69,8 @@ en:
   meals:
     singular: "Meal"
     plural: "Meals"
+    descriptions:
+      receipts: "Possible receipts for this meal. If multiple are given the choice is determined by group."
   
   sessions:
     new:
@@ -97,3 +99,6 @@ en:
               invalid: "should only contain letters, numbers, or .-_@"
             email:
               invalid: "should be a valid email address"
+    attributes:
+      meal:
+        receipts: "alternative receipts"

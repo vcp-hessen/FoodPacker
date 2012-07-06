@@ -1,7 +1,7 @@
 class Receipt < ActiveRecord::Base
   
   has_many :ingredients, dependent: :destroy
-  has_many :meals, :finder_sql => Proc.new{%Q{SELECT * FROM meals WHERE (meals.receipt_id = #{id} or meals.alt_receipt_id = #{id})}}
+  has_and_belongs_to_many :meals
   
   accepts_nested_attributes_for :ingredients, :allow_destroy => true
   

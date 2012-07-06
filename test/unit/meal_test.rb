@@ -5,14 +5,14 @@ class MealTest < ActiveSupport::TestCase
   test "breakfast should have cereal receipt" do
     breakfast = meals(:breakfast)
     
-    assert breakfast.receipt == receipts(:cereals)
+    assert breakfast.receipts.include?(receipts(:cereals))
   end
   
   test "lunch should have soup and pork receipts" do
     breakfast = meals(:lunch)
     
-    assert breakfast.receipt == receipts(:soup)
-    assert breakfast.alt_receipt == receipts(:pork)
+    assert breakfast.receipts.include?(receipts(:soup))
+    assert breakfast.receipts.include?(receipts(:pork))
   end
   
 end
