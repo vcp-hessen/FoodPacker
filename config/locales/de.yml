@@ -12,6 +12,7 @@ de:
       created: "Rezept wurde angelegt."
       perpeople: "für 10 Personen"
       error: "Das Rezept konnte nicht gespeichert werden. Bitte Fehler beheben"
+      error_has_meals: "Das Rezept ist noch in Mahlzeiten ausgewählt"
     actions:
       add_ingredient: "Zutat hinzufügen"
       remove_ingredient: "Diese Zutat löschen"

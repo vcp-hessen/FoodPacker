@@ -25,5 +25,13 @@ class ReceiptTest < ActiveSupport::TestCase
     
     assert pork.meals.count == 2
   end
+  
+  test "receipt should not be deletable if referenced by meals" do
+    pork = receipts(:pork)
+    
+    pork.destroy
+    assert ! pork.destroyed?
+    assert pork.errors[:base].any?
+  end
 
 end

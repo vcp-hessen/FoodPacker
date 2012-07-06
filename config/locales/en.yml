@@ -12,6 +12,7 @@ en:
       created: "Receipt was successfully created."
       perpeople: "per 10 people"
       error: "The receipt could not be save. Please correct the errors below."
+      error_has_meals: "The receipt is referenced by meals"
     actions:
       add_ingredient: "Add new ingredient"
       remove_ingredient: "Remove this ingredient"
