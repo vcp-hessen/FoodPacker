@@ -15,4 +15,9 @@ class MealTest < ActiveSupport::TestCase
     assert breakfast.receipts.include?(receipts(:pork))
   end
   
+  test "lunch should have a group" do
+    lunch = meals(:lunch)
+    
+    assert lunch.groups.include?(groups(:group))
+  end
 end

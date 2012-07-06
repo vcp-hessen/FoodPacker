@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  group_id: 1
+  meal_id: 1
+  participants_count_deviation: 0
+  hunger_factor: 1.0
+  receipt_id: 1
+
+two:
+  group_id: 1
+  meal_id: 2
+  participants_count_deviation: 0
+  hunger_factor: 1.0
+  receipt_id: 3

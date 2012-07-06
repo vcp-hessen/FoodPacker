@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 group:
+  id: 1
   name: "Stamm Otternase"
   participants_count: 23
   hunger_factor: 1.0
 
 hungry_group:
+  id: 2
   name: "Essensgruppe Südmain"
   participants_count: 12
   hunger_factor: 1.1

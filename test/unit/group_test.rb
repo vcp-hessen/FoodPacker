@@ -82,4 +82,11 @@ class GroupTest < ActiveSupport::TestCase
     assert group.errors[:hunger_factor].any?
   end
   
+  test "should have associated meals" do
+    group = groups(:group)
+    
+    assert group.meals.count == 2
+    
+  end
+  
 end
