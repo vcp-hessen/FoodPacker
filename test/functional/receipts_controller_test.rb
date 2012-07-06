@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ReceiptsControllerTest < ActionController::TestCase
   setup do
-    @receipt = receipts(:one)
+    @receipt = receipts(:soup)
   end
 
   test "should get index" do
@@ -90,6 +90,7 @@ class ReceiptsControllerTest < ActionController::TestCase
 
   test "should destroy receipt" do
     assert_difference('Receipt.count', -1) do
+      @receipt.meals.clear
       delete :destroy, {id: @receipt.to_param}, {'user_id' => users(:foo).id}
     end
 

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GroupsControllerTest < ActionController::TestCase
   setup do
-    @group = groups(:one)
+    @group = groups(:group)
   end
 
   test "should get index" do
@@ -17,8 +17,9 @@ class GroupsControllerTest < ActionController::TestCase
   end
 
   test "should create group" do
+    otherGroup = Group.new(name: "Stamm sowieso",participants_count:24,hunger_factor:1.0)
     assert_difference('Group.count') do
-      post :create, group: @group.attributes
+      post :create, group: otherGroup.attributes
     end
 
     assert_redirected_to group_path(assigns(:group))

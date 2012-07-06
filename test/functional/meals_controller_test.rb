@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MealsControllerTest < ActionController::TestCase
   setup do
-    @meal = meals(:one)
+    @meal = meals(:breakfast)
   end
 
   test "should get index" do
