@@ -14,7 +14,7 @@
                     <th>
             <%= t("activerecord.attributes.meal.name", :default => t("activerecord.labels.name", :default => "Name")) %>
           </th>
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+                    <th><%= t("activerecord.attributes.meal.time", :default => t("activerecord.labels.time"))  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @meals.each do |meal| -%>
@@ -26,7 +26,7 @@
             <%= link_to meal.name, meal_path(meal) %>
           </td>
                     <td>
-            <%= l(meal.created_at) %>
+            <%= l(meal.time) %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", meal_path(meal) %> |
