@@ -12,9 +12,7 @@ FoodPacker::Application.routes.draw do
 
   resources :users
 
-  root :to => 'dashboard#index'
-  
-  get "dashboard/index"
+  root :to => 'receipts#index'
 
   resources :receipts
 
