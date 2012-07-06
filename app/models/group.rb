@@ -1,6 +1,6 @@
 class Group < ActiveRecord::Base
   
-  has_many :group_meals
+  has_many :group_meals, dependent: :destroy
   has_many :meals, through: :group_meals
   
   validates :name, presence: true
