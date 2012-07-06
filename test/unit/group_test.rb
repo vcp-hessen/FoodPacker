@@ -86,7 +86,13 @@ class GroupTest < ActiveSupport::TestCase
     group = groups(:group)
     
     assert group.meals.count == 2
+  end
+  
+  test "should associate all existing meals after creation" do
+    group = Group.new(name: "Testgroup", hunger_factor:1.0, participants_count:42)
+    group.save!
     
+    assert group.meals.count == Meal.count
   end
   
 end

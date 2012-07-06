@@ -3,14 +3,16 @@ require 'test_helper'
 class GroupMealTest < ActiveSupport::TestCase
 
   test "attributes may not be empty" do
-    product = GroupMeal.new
+    group_meal = GroupMeal.new
+    group_meal.hunger_factor = nil
+    group_meal.participants_count_deviation = nil
     
-    assert product.invalid?
-    assert product.errors[:meal_id].any?
-    assert product.errors[:group_id].any?
-    assert product.errors[:receipt_id].any?
-    assert product.errors[:hunger_factor].any?
-    assert product.errors[:participants_count_deviation].any?
+    assert group_meal.invalid?
+    assert group_meal.errors[:meal_id].any?
+    assert group_meal.errors[:group_id].any?
+    assert group_meal.errors[:receipt_id].any?
+    assert group_meal.errors[:hunger_factor].any?
+    assert group_meal.errors[:participants_count_deviation].any?
   end
 
   test "participants_count_deviation must be an integer" do

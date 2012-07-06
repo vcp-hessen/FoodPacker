@@ -13,4 +13,9 @@ class GroupMeal < ActiveRecord::Base
   validates :participants_count_deviation, numericality: { :only_integer => true }
   validates :hunger_factor, numericality: {greater_than_or_equal_to: 0.4, less_than_or_equal_to: 1.6}
   
+  after_initialize do |group_meal|
+    group_meal.hunger_factor = 1.0
+    group_meal.participants_count_deviation = 0
+  end
+  
 end
