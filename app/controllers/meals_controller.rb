@@ -1,4 +1,7 @@
 class MealsController < ApplicationController
+
+  before_filter :login_required
+
   # GET /meals
   # GET /meals.json
   def index
