@@ -86,7 +86,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.destroyed?
-        format.html { redirect_to products_url }
+        format.html { redirect_to products_url, notice: t('messages.model.destroyed', model: t('products.singular'), name: @product.name) }
         format.json { head :ok }
       else
         format.html {

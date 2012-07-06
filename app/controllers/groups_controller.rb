@@ -85,7 +85,7 @@ class GroupsController < ApplicationController
     @group.destroy
 
     respond_to do |format|
-      format.html { redirect_to groups_url }
+      format.html { redirect_to groups_url, notice: t('messages.model.destroyed', model: t('groups.singular'), name: @group.name) }
       format.json { head :ok }
     end
   end

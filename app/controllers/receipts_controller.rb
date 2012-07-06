@@ -86,7 +86,7 @@ class ReceiptsController < ApplicationController
 
     respond_to do |format|
       if @receipt.destroyed?
-        format.html { redirect_to receipts_url }
+        format.html { redirect_to receipts_url, notice: t('messages.model.destroyed', model: t('receipts.singular'), name: @receipt.name) }
         format.json { head :ok }
       else
         format.html {
