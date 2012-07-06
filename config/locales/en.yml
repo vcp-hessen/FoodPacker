@@ -13,6 +13,7 @@ en:
       perpeople: "per 10 people"
       error: "The receipt could not be save. Please correct the errors below."
       error_has_meals: "The receipt is referenced by meals"
+      cant_delete: "The receipt could not be deleted."
     actions:
       add_ingredient: "Add new ingredient"
       remove_ingredient: "Remove this ingredient"
@@ -58,6 +59,8 @@ en:
       updated: "Product was successfully updated."
       created: "Product was successfully created."
       error: "The product could not be save. Please correct the errors below."
+      error_has_ingredients: "Product is still used in reciepes"
+      cant_delete: "The product could not be deleted."
 
   ingredients:
     singular: "Ingredient"

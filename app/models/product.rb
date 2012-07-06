@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
     if ingredients.empty?
       return true
     else
-      errors.add(:base, "Product is still used in reciepes")
+      errors.add(:base, I18n.t('products.messages.error_has_ingredients'))
       return false
     end
   end

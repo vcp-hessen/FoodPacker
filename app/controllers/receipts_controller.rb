@@ -85,8 +85,19 @@ class ReceiptsController < ApplicationController
     @receipt.destroy
 
     respond_to do |format|
-      format.html { redirect_to receipts_url }
-      format.json { head :ok }
+      if @receipt.destroyed?
+        format.html { redirect_to receipts_url }
+        format.json { head :ok }
+      else
+        format.html {
+          begin
+            redirect_to :back, flash: {error: t('receipts.messages.cant_delete'), warning: @receipt.errors[:base].to_sentence }
+          rescue ActionController::RedirectBackError
+            redirect_to receipts_url, flash: {error: t('receipts.messages.cant_delete'), warning: @receipt.errors[:base].to_sentence }
+          end
+        }
+        format.json { render json: @receipt.errors, status: :unprocessable_entity }
+      end
     end
   end
 end

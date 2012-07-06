@@ -85,8 +85,19 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
-      format.json { head :ok }
+      if @product.destroyed?
+        format.html { redirect_to products_url }
+        format.json { head :ok }
+      else
+        format.html {
+          begin
+            redirect_to :back, flash: {error: t('products.messages.cant_delete'), warning: @product.errors[:base].to_sentence }
+          rescue ActionController::RedirectBackError
+            redirect_to products_url, flash: {error: t('products.messages.cant_delete'), warning: @product.errors[:base].to_sentence }
+          end
+        }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
     end
   end
 end

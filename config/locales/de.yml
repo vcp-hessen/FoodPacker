@@ -13,6 +13,7 @@ de:
       perpeople: "für 10 Personen"
       error: "Das Rezept konnte nicht gespeichert werden. Bitte Fehler beheben"
       error_has_meals: "Das Rezept ist noch in Mahlzeiten ausgewählt"
+      cant_delete: "Das Rezept konnte nicht gelöscht werden."
     actions:
       add_ingredient: "Zutat hinzufügen"
       remove_ingredient: "Diese Zutat löschen"
@@ -58,6 +59,8 @@ de:
       updated: "Produkt wurde gespeichert."
       created: "Produkt wurde angelegt."
       error: "Das Produkt konnte nicht gespeichert werden. Bitte Fehler beheben"
+      error_has_ingredients: "Das Produkt wird noch in Rezepten verwendet."
+      cant_delete: "Das Produkt konnte nicht gelöscht werden."
     
   ingredients:
     singular: "Zutat"

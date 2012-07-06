@@ -13,7 +13,7 @@ class Receipt < ActiveRecord::Base
     if meals.empty?
       return true
     else
-      errors.add(:base, I18n.t("receipt.messages.error_has_meals"))
+      errors.add(:base, I18n.t("receipts.messages.error_has_meals"))
       return false
     end
   end
