@@ -11,6 +11,18 @@ class MealsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:meals)
   end
   
+  test "should get index sorted by time" do
+    
+    late_breakfast = meals(:breakfast)
+    late_breakfast.time = meals(:lunch).time.advance(hours: 1)
+    late_breakfast.save!
+    
+    get :index, {}, {'user_id' => users(:foo).to_param}
+    assert_response :success
+    assert assigns(:meals).first == meals(:lunch)
+    assert assigns(:meals).last == meals(:supper)
+  end
+  
   test "should not get index if not logged in" do
     get :index
     assert_redirected_to login_url
