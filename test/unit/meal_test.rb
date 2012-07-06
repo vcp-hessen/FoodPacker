@@ -35,4 +35,13 @@ class MealTest < ActiveSupport::TestCase
     
     assert fruhstuck.groups.count == Group.count
   end
+  
+  test "should update existing group_meal associations after receipts have changed" do
+    lunch = meals(:lunch)
+    lunch.receipts.delete(receipts(:pork))
+    lunch.save!
+    
+    group_meal = groups(:group).group_meals.find_by_meal_id(lunch.to_param)
+    assert group_meal.receipt_id == receipts(:soup).id
+  end
 end
