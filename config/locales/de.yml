@@ -4,16 +4,19 @@
 de:
   hello: "Hallo Welt"
   
+  messages:
+    model:
+      updated: "%{model} wurde gespeichert."
+      created: "%{model} wurde angelegt."
+      destroyed: "%{model} %{name} wurde gelöscht."
+      cant_delete: "%{model} konnte nicht gelöscht werden."
+  
   receipts:
     singular: "Rezept"
     plural: "Rezepte"
     messages:
-      updated: "Rezept wurde gespeichert."
-      created: "Rezept wurde angelegt."
       perpeople: "für 10 Personen"
-      error: "Das Rezept konnte nicht gespeichert werden. Bitte Fehler beheben"
       error_has_meals: "Das Rezept ist noch in Mahlzeiten ausgewählt"
-      cant_delete: "Das Rezept konnte nicht gelöscht werden."
     actions:
       add_ingredient: "Zutat hinzufügen"
       remove_ingredient: "Diese Zutat löschen"
@@ -44,9 +47,6 @@ de:
     singular: "Gruppe"
     plural: "Gruppen"
     messages:
-      updated: "Gruppe wurde gespeichert."
-      created: "Gruppe wurde angelegt."
-      error: "Die Gruppe konnte nicht gespeichert werden. Bitte Fehler beheben"
     descriptions:
       name: "Der Gruppenname (muss eindeutig sein)"
       participants_count: "Zahl der Gruppenteilnehmer (> 0)"
@@ -56,11 +56,7 @@ de:
     singular: "Produkt"
     plural: "Produkte"
     messages:
-      updated: "Produkt wurde gespeichert."
-      created: "Produkt wurde angelegt."
-      error: "Das Produkt konnte nicht gespeichert werden. Bitte Fehler beheben"
       error_has_ingredients: "Das Produkt wird noch in Rezepten verwendet."
-      cant_delete: "Das Produkt konnte nicht gelöscht werden."
     
   ingredients:
     singular: "Zutat"

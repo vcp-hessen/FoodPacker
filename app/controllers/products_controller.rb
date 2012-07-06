@@ -47,11 +47,11 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: t('products.messages.created') }
+        format.html { redirect_to @product, notice: t('messages.model.created', model: t('products.singular')) }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { 
-          flash.now[:error] = t('products.messages.error')
+          flash.now[:error] = t('errors.template.header', model: t('products.singular'), count: @product.errors.count)
           render action: "new"
           }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -66,11 +66,11 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: t('products.messages.updated') }
+        format.html { redirect_to @product, notice: t('messages.model.updated', model: t('products.singular')) }
         format.json { head :ok }
       else
         format.html { 
-          flash.now[:error] = t('products.messages.error')
+          flash.now[:error] = t('errors.template.header', model: t('products.singular'), count: @product.errors.count)
           render action: "edit"
           }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -91,9 +91,9 @@ class ProductsController < ApplicationController
       else
         format.html {
           begin
-            redirect_to :back, flash: {error: t('products.messages.cant_delete'), warning: @product.errors[:base].to_sentence }
+            redirect_to :back, flash: {error: t('messages.model.cant_delete', model: t('products.singular')), warning: @product.errors[:base].to_sentence }
           rescue ActionController::RedirectBackError
-            redirect_to products_url, flash: {error: t('products.messages.cant_delete'), warning: @product.errors[:base].to_sentence }
+            redirect_to products_url, flash: {error: t('messages.model.cant_delete', model: t('products.singular')), warning: @product.errors[:base].to_sentence }
           end
         }
         format.json { render json: @product.errors, status: :unprocessable_entity }

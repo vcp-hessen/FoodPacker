@@ -4,16 +4,19 @@
 en:
   hello: "Hello world"
   
+  messages:
+    model:
+      updated: "%{model} was saved."
+      created: "%{model} was created."
+      destroyed: "%{model} %{name} was deleted."
+      cant_delete: "%{model} could not be deleted."
+  
   receipts:
     singular: "Receipt"
     plural: "Receipts"
     messages:
-      updated: "Receipt was successfully updated."
-      created: "Receipt was successfully created."
       perpeople: "per 10 people"
-      error: "The receipt could not be save. Please correct the errors below."
       error_has_meals: "The receipt is referenced by meals"
-      cant_delete: "The receipt could not be deleted."
     actions:
       add_ingredient: "Add new ingredient"
       remove_ingredient: "Remove this ingredient"
@@ -43,10 +46,6 @@ en:
   groups:
     singular: "Group"
     plural: "Groups"
-    messages:
-      updated: "Group was successfully updated."
-      created: "Group was successfully created."
-      error: "The group could not be save. Please correct the errors below."
     descriptions:
       name: "The name of the group (must be unique)"
       participants_count: "Count of group participants (> 0)"
@@ -56,11 +55,7 @@ en:
     singular: "Product"
     plural: "products"
     messages:
-      updated: "Product was successfully updated."
-      created: "Product was successfully created."
-      error: "The product could not be save. Please correct the errors below."
       error_has_ingredients: "Product is still used in reciepes"
-      cant_delete: "The product could not be deleted."
 
   ingredients:
     singular: "Ingredient"

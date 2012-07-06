@@ -47,11 +47,11 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: t('groups.messages.created') }
+        format.html { redirect_to @group, notice: t('messages.model.created', model: t('groups.singular')) }
         format.json { render json: @group, status: :created, location: @group }
       else
         format.html { 
-          flash.now[:error] = t('groups.messages.error')
+          flash.now[:error] = t('errors.template.header', model: t('groups.singular'), count: @group.errors.count)
           render action: "new"
           }
         format.json { render json: @group.errors, status: :unprocessable_entity }
@@ -66,11 +66,11 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.update_attributes(params[:group])
-        format.html { redirect_to @group, notice: t('groups.messages.updated') }
+        format.html { redirect_to @group, notice: t('messages.model.updated', model: t('groups.singular')) }
         format.json { head :ok }
       else
         format.html { 
-          flash.now[:error] = t('groups.messages.error')
+          flash.now[:error] = t('errors.template.header', model: t('groups.singular'), count: @group.errors.count)
           render action: "edit"
           }
         format.json { render json: @group.errors, status: :unprocessable_entity }
