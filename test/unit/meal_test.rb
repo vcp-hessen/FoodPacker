@@ -21,6 +21,13 @@ class MealTest < ActiveSupport::TestCase
     assert lunch.groups.include?(groups(:group))
   end
   
+  test "receipts association is required" do
+    fruhstuck = Meal.new(name: "Fruhstuck")
+    
+    assert fruhstuck.invalid?
+    assert fruhstuck.errors[:receipts].any?
+  end
+  
   test "should associate all existing groups after creation" do
     fruhstuck = Meal.new(name: "Fruhstuck")
     fruhstuck.receipts << receipts(:cereals)

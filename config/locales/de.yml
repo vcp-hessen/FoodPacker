@@ -120,6 +120,10 @@ de:
               invalid: "darf nur Buchstaben, Ziffern und '.-_@' enthalten"
             email:
               invalid: "muss eine gültige Email Adresse sein."
+        meal:
+          attributes:
+            receipts:
+              blank: "muss mindestens ein Rezept enthalten."
               
   time:
     formats:

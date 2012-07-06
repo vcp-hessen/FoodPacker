@@ -94,6 +94,10 @@ en:
               invalid: "should only contain letters, numbers, or .-_@"
             email:
               invalid: "should be a valid email address"
+        meal:
+          attributes:
+            receipts:
+              blank: "must contain at least one receipt."
     attributes:
       meal:
         receipts: "alternative receipts"
