@@ -1,0 +1,12 @@
+        
+<%= simple_form_for meal do |f| %>
+  <%= f.input :name %>
+  <%= f.input :time %>
+  <%= f.association :receipt, hint: t('meals.descriptions.receipt') %>
+  <%= f.association :alt_receipt, hint: t('meals.descriptions.alt_receipt') %>
+<div class="group navform wat-cf">
+  <%= content_tag :button, :type => :submit, :class => 'button positive' do
+	      image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") + " " + t("web-app-theme.save", :default => "Save")
+	    end %>
+</div>
+<% end %>

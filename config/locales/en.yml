@@ -62,6 +62,10 @@ en:
     singular: "Ingredient"
     plural: "Ingredients"
   
+  meals:
+    singular: "Meal"
+    plural: "Meals"
+  
   sessions:
     new:
       title: "Log in!"

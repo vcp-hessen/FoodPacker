@@ -19,6 +19,8 @@ FoodPacker::Application.routes.draw do
   resources :products
   
   resources :groups
+  
+  resources :meals
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

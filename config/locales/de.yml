@@ -62,6 +62,13 @@ de:
     singular: "Zutat"
     plural: "Zutaten"
     
+  meals:
+    singular: "Mahlzeit"
+    plural: "Mahlzeiten"
+    descriptions:
+      receipt: "Das Rezept für diese Mahlzeit."
+      alt_receipt: "Ein alternatives Rezept. Wird hier ein Rezept eingestellt taucht bei allen Gruppen die Wahlmöglichkeit auf."
+    
   sessions:
     new:
       title: "Bitte einloggen"
@@ -86,6 +93,7 @@ de:
       product: "Produkt"
       ingredient: "Zutat"
       group: "Gruppe"
+      meal: "Mahlzeit"
     attributes:
       receipt:
         name: "Name"
@@ -99,6 +107,11 @@ de:
       product:
         name: "Name"
         unit: "Einheit"
+      meal:
+        name: "Name"
+        time: "Zeitpunkt"
+        receipt: "Rezept"
+        alt_receipt: "Alternatives Rezept"
     errors:
       header: "Fehler"
       message: "Bitte korrigiere die folgenden Fehler:"
