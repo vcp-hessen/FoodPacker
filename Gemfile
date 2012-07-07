@@ -25,6 +25,7 @@ end
 group :production do
   gem 'fcgi'
   gem 'mysql2'
+  gem 'yaml_db'
 end
 
 gem 'jquery-rails'

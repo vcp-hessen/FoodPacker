@@ -135,6 +135,7 @@ GEM
     web-app-theme (0.8.0)
       rails (~> 3.1.0.rc6)
       thor (~> 0.14)
+    yaml_db (0.2.3)
 
 PLATFORMS
   ruby
@@ -157,3 +158,4 @@ DEPENDENCIES
   turn
   uglifier (>= 1.0.3)
   web-app-theme (~> 0.8.0)
+  yaml_db
