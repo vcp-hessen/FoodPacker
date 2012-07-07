@@ -44,4 +44,10 @@ class MealTest < ActiveSupport::TestCase
     group_meal = groups(:group).group_meals.find_by_meal_id(lunch.to_param)
     assert group_meal.receipt_id == receipts(:soup).id
   end
+  
+  test "should have box_stubs" do
+    lunch = meals(:lunch)
+    
+    assert lunch.box_stubs.count == 1
+  end
 end
