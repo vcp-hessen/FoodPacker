@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+thursday_evening:
+  start_time: 2012-07-26 16:15:00
+  end_time: 2012-07-26 17:00:00
+  name: Abendkiste
+
+friday_morning:
+  start_time: 2012-07-27 07:30:00
+  end_time: 2012-07-27 08:15:00
+  name: Morgenkiste
+
+friday_evening:
+  start_time: 2012-07-27 16:15:00
+  end_time: 2012-07-27 17:00:00
+  name: Abendkiste
