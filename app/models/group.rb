@@ -3,6 +3,8 @@ class Group < ActiveRecord::Base
   has_many :group_meals, dependent: :destroy
   has_many :meals, through: :group_meals
   
+  accepts_nested_attributes_for :group_meals
+  
   validates :name, presence: true
   validates :name, uniqueness: true
   

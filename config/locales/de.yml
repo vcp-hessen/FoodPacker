@@ -110,6 +110,10 @@ de:
         name: "Name"
         time: "Zeitpunkt"
         receipts: "Rezeptalternativen"
+      group_meal:
+        participants_count_deviation: "Teilnehmerabweichung"
+        hunger_factor: "Mampf-Faktor"
+        receipt: "Rezept"
     errors:
       header: "Fehler"
       message: "Bitte korrigiere die folgenden Fehler:"

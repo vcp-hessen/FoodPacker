@@ -23,6 +23,28 @@
           <b><%= t("activerecord.attributes.group.hunger_factor", :default => t("activerecord.labels.hunger_factor", :default => "Hunger factor")) %>:</b>
           <%= @group.hunger_factor %>
         </p>
+
+		<h2><%= t('meals.plural') %></h2>
+		<table class="group_meals">
+			<thead>
+				<th><%= t('meals.singular') %></th>
+				<th><%= t("activerecord.attributes.meal.time") %></th>
+				<th><%= t("activerecord.attributes.group_meal.receipt") %></th>
+				<th><%= t("activerecord.attributes.group.participants_count") %></th>
+				<th><%= t("activerecord.attributes.group_meal.hunger_factor") %></th>
+			</thead>
+			<tbody>
+		  <% @group.group_meals.each do |group_meal| %>
+			<tr>
+		    <td><%= group_meal.meal.name %></td>
+		    <td><%= l(group_meal.meal.time) %></td>
+		    <td><%= group_meal.receipt.name %></td>
+		    <td><%= @group.participants_count + group_meal.participants_count_deviation %> <em>(<%= sprintf("%+i", group_meal.participants_count_deviation) %>)</em></td>
+		    <td><%= group_meal.hunger_factor %></td>
+			</tr>
+		  <% end %>
+			</tbody>
+		</table>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_group_path(@group), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), group_path(@group), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

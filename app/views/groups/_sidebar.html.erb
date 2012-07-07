@@ -4,3 +4,22 @@
     <p>Eine Gruppe ist eine Einheit, die Essenskisten bekommen kann. Es kann ein Stamm oder ein Zusammenschluss mehrerer Stämme sein.</p>
   </div>
 </div>
+<div class="block">
+  <h3><%= t("activerecord.attributes.group.hunger_factor") %></h3>
+  <div class="content">
+    <p>Der Mampf-Faktor beschreibt den Hunger einer Gruppe. Alle Mengenangaben in den Rezepten werden mit dem Mampf-Faktor der Gruppe multipliziert.</p>
+  </div>
+</div>
+<div class="block">
+  <h3><%= t('meals.plural') %></h3>
+  <div class="content">
+    <p>Die Liste aller Mahlzeiten ermöglicht die Auswahl von Rezepten für Mahlzeiten, bei denen mehrere Rezepte zur Auswahl stehen, sowie die Anpassung von Teilnehmerzahl und Mampf-Factor pro Mahlzeit.</p>
+    <p>Die Mahlzeiten müssen zunächst im Bereich <%= link_to "Mahlzeiten", meals_url  %> angelegt werden</p>
+  </div>
+</div>
+<div class="block">
+  <h3><%= t("activerecord.attributes.group_meal.participants_count_deviation") %></h3>
+  <div class="content">
+    <p>Hier kann die Teilnehmerzahl für einzelne Mahlzeiten angepasst werden. z.B. bei Besuch, oder späterer Anreise von Einzelnen. Die Angabe wird als <strong>Abweichung</strong> interpretiert. D.h. 0 bedeutet so wie oben angegeben, 2 bedeutet 2 Personen mehr und -4 bedeutet 4 Personen weniger.</p>
+  </div>
+</div>

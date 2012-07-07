@@ -1,7 +1,29 @@
-<%= simple_form_for group do |f| %>
+<%= simple_nested_form_for group do |f| %>
   <%= f.input :name, :hint => t('groups.descriptions.name') %>
   <%= f.input :participants_count, :hint => t('groups.descriptions.participants_count') %>
   <%= f.input :hunger_factor, :hint => t('groups.descriptions.hunger_factor') %>
+  
+<h2><%= t('meals.plural') %></h2>
+<table class="group_meals">
+	<thead>
+		<th><%= t('meals.singular') %></th>
+		<th><%= t("activerecord.attributes.meal.time") %></th>
+		<th><%= t("activerecord.attributes.group_meal.receipt") %></th>
+		<th><%= t("activerecord.attributes.group_meal.participants_count_deviation") %></th>
+		<th><%= t("activerecord.attributes.group_meal.hunger_factor") %></th>
+	</thead>
+	<tbody>
+  <%= f.simple_fields_for :group_meals, wrapper: :table do |group_meals| %>
+	<tr>
+    <td><%= group_meals.object.meal.name %></td>
+    <td><%= l(group_meals.object.meal.time) %></td>
+    <%= group_meals.association :receipt, :collection => group_meals.object.meal.receipts, :include_blank => false %>
+    <%= group_meals.input :participants_count_deviation, size: 10 %>
+    <%= group_meals.input :hunger_factor, size: 10 %>
+	</tr>
+  <% end %>
+	</tbody>
+</table>
 
 <div class="group navform wat-cf">
   <button class="button" type="submit">
