@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  group_box_id: 1
+  meal_id: 2
+  participants_count: 12
+
+two:
+  group_box_id: 1
+  meal_id: 3
+  participants_count: 12
