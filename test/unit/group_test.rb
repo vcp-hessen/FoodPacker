@@ -95,4 +95,10 @@ class GroupTest < ActiveSupport::TestCase
     assert group.meals.count == Meal.count
   end
   
+  test "should have group boxes" do
+    group = groups(:hungry_group)
+    
+    assert group.group_boxes.count == 3
+  end
+  
 end
