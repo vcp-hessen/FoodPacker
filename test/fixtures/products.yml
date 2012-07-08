@@ -7,3 +7,13 @@ zucker:
 mehl:
   name: Mehl
   unit: g
+
+meat:
+  id: 3
+  name: meat
+  unit: g
+
+salt:
+  id: 4
+  name: salt
+  unit: g

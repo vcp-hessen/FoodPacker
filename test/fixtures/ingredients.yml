@@ -9,3 +9,13 @@ two:
   quantity: 1.5
   receipt_id: 1
   product_id: 1
+
+three:
+  quantity: 1500.0
+  receipt_id: 3
+  product_id: 3
+
+four:
+  quantity: 1.0
+  receipt_id: 3
+  product_id: 4
