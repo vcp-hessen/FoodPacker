@@ -83,3 +83,11 @@ production:
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 end
+
+  namespace :rails do
+    desc "Open the rails console on one of the remote servers"
+    task :console, :roles => :app do
+      hostname = find_servers_for_task(current_task).first
+      exec "ssh foodpack -t 'source ~/.bash_profile && #{current_path}/script/rails c #{rails_env}'"
+    end
+  end
