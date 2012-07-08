@@ -1,7 +1,7 @@
         
 <%= simple_form_for meal do |f| %>
   <%= f.input :name %>
-  <%= f.input :time %>
+  <%= f.input :time, minute_step: 15, discard_year: true %>
   <%= f.association :receipts, hint: t('meals.descriptions.receipts') %>
 <div class="group navform wat-cf">
   <%= content_tag :button, :type => :submit, :class => 'button positive' do
