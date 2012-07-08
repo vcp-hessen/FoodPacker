@@ -34,8 +34,10 @@ class MealsControllerTest < ActionController::TestCase
   end
 
   test "should create meal" do
+    meal_attributes = @meal.attributes
+    meal_attributes[:receipt_ids] = [1]
     assert_difference('Meal.count') do
-      post :create, {meal: @meal.attributes}, {'user_id' => users(:foo).to_param}
+      post :create, {meal: meal_attributes}, {'user_id' => users(:foo).to_param}
     end
 
     assert_redirected_to meal_path(assigns(:meal))
