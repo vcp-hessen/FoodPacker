@@ -1,0 +1,48 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", boxes_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_box_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Boxes</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+                    <th>
+            <%= t("activerecord.attributes.box.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          </th>
+                    <th><%= t("boxes.pickup_time", :default => "Pick up time")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @boxes.each do |box| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= box.id %>
+          </td>
+                    <td>
+            <%= link_to box.name, box_path(box) %>
+          </td>
+                    <td>
+            <%= l(box.start_time) %> - <%= l(box.end_time, :format => :only_time)%>
+          </td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", box_path(box) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_box_path(box) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", box_path(box), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

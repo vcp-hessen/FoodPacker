@@ -68,6 +68,11 @@ de:
     descriptions:
       receipts: "Mögliche Rezepte für diese Mahlzeit. Sind mehrere gegeben wird das zu verwendende Rezept pro Gruppe angegeben."
     
+  boxes:
+    singular: "Kiste"
+    plural: "Kisten"
+    pickup_time: "Abholzeit"
+    
   sessions:
     new:
       title: "Bitte einloggen"
@@ -93,6 +98,7 @@ de:
       ingredient: "Zutat"
       group: "Gruppe"
       meal: "Mahlzeit"
+      box: "Kiste"
     attributes:
       receipt:
         name: "Name"
@@ -114,6 +120,12 @@ de:
         participants_count_deviation: "Teilnehmerabweichung"
         hunger_factor: "Mampf-Faktor"
         receipt: "Rezept"
+      box:
+        name: "Name"
+        start_time: "Anfangszeit"
+        end_time: "Endzeit"
+        meals: "Mahlzeiten"
+
     errors:
       header: "Fehler"
       message: "Bitte korrigiere die folgenden Fehler:"
@@ -131,7 +143,8 @@ de:
               
   time:
     formats:
-      default: '%d.%m.%Y %H:%M:%S'
+      default: '%d.%m.%Y %H:%M'
+      only_time: '%H:%M'
       
   date:
     formats:

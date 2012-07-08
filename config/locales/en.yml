@@ -66,7 +66,11 @@ en:
     plural: "Meals"
     descriptions:
       receipts: "Possible receipts for this meal. If multiple are given the choice is determined by group."
-  
+      
+  boxes:
+    singular: "Kiste"
+    plural: "Kisten"
+    
   sessions:
     new:
       title: "Log in!"
@@ -101,3 +105,7 @@ en:
     attributes:
       meal:
         receipts: "alternative receipts"
+
+  time:
+    formats:
+      only_time: '%H:%M'
