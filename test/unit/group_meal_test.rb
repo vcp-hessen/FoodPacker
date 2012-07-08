@@ -71,4 +71,41 @@ class GroupMealTest < ActiveSupport::TestCase
     assert group_meal.invalid?
     assert group_meal.errors[:hunger_factor].any?
   end
+  
+  test "should calculate the meal participants count" do
+    group_meal = group_meals(:supper_15_people_1_0)
+    
+    assert_equal 15, group_meal.meal_participants_count
+    
+    group_meal = group_meals(:supper_15_people_1_2)
+    
+    assert_equal 15, group_meal.meal_participants_count
+    
+    group_meal = group_meals(:supper_14_people_1_32)
+    
+    assert_equal 14, group_meal.meal_participants_count
+    
+    group_meal = group_meals(:supper_45_people_0_945)
+    
+    assert_equal 45, group_meal.meal_participants_count
+  end
+  
+  test "should calculate the meal hunger factor" do
+    group_meal = group_meals(:supper_15_people_1_0)
+    
+    assert_in_delta 1.0, group_meal.meal_hunger_factor, 0.0001
+    
+    group_meal = group_meals(:supper_15_people_1_2)
+    
+    assert_in_delta 1.2, group_meal.meal_hunger_factor, 0.0001
+    
+    group_meal = group_meals(:supper_14_people_1_32)
+    
+    assert_in_delta 1.32, group_meal.meal_hunger_factor, 0.0001
+    
+    group_meal = group_meals(:supper_45_people_0_945)
+    
+    assert_in_delta 0.945, group_meal.meal_hunger_factor, 0.0001
+  end
+  
 end

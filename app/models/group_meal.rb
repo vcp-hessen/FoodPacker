@@ -18,4 +18,12 @@ class GroupMeal < ActiveRecord::Base
     group_meal.participants_count_deviation ||= 0
   end
   
+  def meal_participants_count
+    self.group.participants_count + self.participants_count_deviation
+  end
+  
+  def meal_hunger_factor
+    self.group.hunger_factor * self.hunger_factor
+  end
+  
 end

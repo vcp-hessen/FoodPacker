@@ -11,3 +11,21 @@ hungry_group:
   name: "Essensgruppe Südmain"
   participants_count: 12
   hunger_factor: 1.1
+
+calc_group_13_people_1_0:
+  id: 3
+  name: "Gruppe mit 13 Pax | Hunger 1.0"
+  participants_count: 13
+  hunger_factor: 1.0
+
+calc_group_15_people_1_2:
+  id: 4
+  name: "Gruppe mit 15 Pax | Hunger 1.2"
+  participants_count: 15
+  hunger_factor: 1.2
+
+calc_group_42_people_0_9:
+  id: 5
+  name: "Gruppe mit 12 Pax | Hunger 0.9"
+  participants_count: 42
+  hunger_factor: 0.9
