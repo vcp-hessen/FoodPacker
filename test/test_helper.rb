@@ -10,4 +10,12 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  
+  def assert_includes(elem, array, message = nil)
+    message = build_message message, '<?> is not found in <?>.', elem, array
+    assert_block message do
+      array.include? elem
+    end
+  end
+  
 end

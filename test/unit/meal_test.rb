@@ -48,6 +48,6 @@ class MealTest < ActiveSupport::TestCase
   test "should have box_stubs" do
     lunch = meals(:lunch)
     
-    assert lunch.boxes.count == 1
+    assert lunch.boxes.count == 2
   end
 end

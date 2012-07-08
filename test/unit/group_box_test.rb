@@ -20,4 +20,20 @@ class GroupBoxTest < ActiveSupport::TestCase
     assert group_box.group_box_meals.count == 2
   end
 
+  test "should raise when initialized without box_id" do
+    exception = assert_raise RuntimeError do
+      GroupBox.new(group_id:1)
+    end
+    
+    assert_equal "initialized group box without box_id", exception.message
+  end
+  
+  test "should raise when initialized without group_id" do
+    exception = assert_raise RuntimeError do
+      GroupBox.new(box_id:1)
+    end
+    
+    assert_equal "initialized group box without group_id", exception.message
+  end
+  
 end

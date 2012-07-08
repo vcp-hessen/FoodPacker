@@ -5,3 +5,11 @@ one:
 two:
   box_id: 1
   meal_id: 3
+  
+three:
+  box_id: 4
+  meal_id: 2
+
+four:
+  box_id: 4
+  meal_id: 3

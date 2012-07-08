@@ -30,7 +30,7 @@ supper_15_people_1_2:
 
 supper_14_people_1_32:
   group_id: 4
-  meal_id: 3
+  meal_id: 2
   participants_count_deviation: -1
   hunger_factor: 1.1
   receipt_id: 3

@@ -17,3 +17,8 @@ salt:
   id: 4
   name: salt
   unit: g
+
+soup:
+  id: 5
+  name: soup
+  unit: l

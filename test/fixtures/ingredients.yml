@@ -19,3 +19,8 @@ four:
   quantity: 1.0
   receipt_id: 3
   product_id: 4
+
+five:
+  quantity: 1.0
+  receipt_id: 2
+  product_id: 4

@@ -14,4 +14,12 @@ class BoxTest < ActiveSupport::TestCase
     assert box.group_boxes.count == 1
   end
 
+  test "should build a box for a group with all meals calculated" do
+    box = boxes(:saturday_morning)
+    group_box = box.build_calculated_box_for_group groups(:calc_group_15_people_1_2)
+    
+    assert_equal 1, box.group_boxes.length
+    assert_equal 2, group_box.group_box_meals.length
+    
+  end
 end
