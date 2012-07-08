@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707100605) do
+ActiveRecord::Schema.define(:version => 20120708100710) do
 
-  create_table "box_stubs", :force => true do |t|
+  create_table "boxes", :force => true do |t|
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "name"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(:version => 20120707100605) do
     t.datetime "updated_at"
   end
 
-  create_table "box_stubs_meals", :id => false, :force => true do |t|
-    t.integer "box_stub_id"
+  create_table "boxes_meals", :id => false, :force => true do |t|
+    t.integer "box_id"
     t.integer "meal_id"
   end
 
-  add_index "box_stubs_meals", ["box_stub_id", "meal_id"], :name => "index_box_stubs_meals_on_box_stub_id_and_meal_id"
-  add_index "box_stubs_meals", ["meal_id", "box_stub_id"], :name => "index_box_stubs_meals_on_meal_id_and_box_stub_id"
+  add_index "boxes_meals", ["box_id", "meal_id"], :name => "index_box_stubs_meals_on_box_stub_id_and_meal_id"
+  add_index "boxes_meals", ["meal_id", "box_id"], :name => "index_box_stubs_meals_on_meal_id_and_box_stub_id"
 
   create_table "group_meals", :force => true do |t|
     t.integer  "group_id"
