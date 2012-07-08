@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120708184118) do
+ActiveRecord::Schema.define(:version => 20120708184847) do
 
   create_table "boxes", :force => true do |t|
     t.datetime "start_time"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(:version => 20120708184118) do
 
   add_index "boxes_meals", ["box_id", "meal_id"], :name => "index_box_stubs_meals_on_box_stub_id_and_meal_id"
   add_index "boxes_meals", ["meal_id", "box_id"], :name => "index_box_stubs_meals_on_meal_id_and_box_stub_id"
+
+  create_table "group_box_contents", :force => true do |t|
+    t.integer  "group_box_meal_id"
+    t.string   "name"
+    t.float    "quantity"
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "group_box_meals", :force => true do |t|
     t.integer  "group_box_id"
