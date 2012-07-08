@@ -14,7 +14,8 @@
                     <th>
             <%= t("activerecord.attributes.group.name", :default => t("activerecord.labels.name", :default => "Name")) %>
           </th>
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th><%= t("activerecord.attributes.group.participants_count", :default => "Participants Count")  %></th>
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @groups.each do |group| -%>
@@ -22,10 +23,13 @@
           <td>
             <%= group.id %>
           </td>
-                    <td>
+          <td>
             <%= link_to group.name, group_path(group) %>
           </td>
-                    <td>
+          <td>
+            <%= group.participants_count %>
+          </td>
+          <td>
             <%= l(group.created_at) %>
           </td>
           <td class="last">
