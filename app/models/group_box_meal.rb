@@ -1,6 +1,6 @@
 class GroupBoxMeal < ActiveRecord::Base
   
-  has_many :contents, class_name: "GroupBoxContents"
+  has_many :contents, class_name: "GroupBoxContent"
   has_one :group, through: :group_box
   
   belongs_to :group_box
@@ -15,7 +15,7 @@ class GroupBoxMeal < ActiveRecord::Base
   def build_contents_from_ingredients_hunger_factor(ingredients,hunger_factor)
     ingredients.each do |ingredient|
       quantity = ingredient.quantity / 10 * participants_count * hunger_factor
-      contents.build(name: ingredient.product.name,quantity:quantity,unit:ingredient.product.unit)
+      contents.build(product: ingredient.product,quantity:quantity)
     end
     contents
   end

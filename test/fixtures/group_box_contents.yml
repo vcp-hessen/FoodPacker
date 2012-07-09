@@ -2,12 +2,10 @@
 
 one:
   group_box_meal_id: 1
-  name: Mehl
+  product_id: 3
   quantity: 2.5
-  unit: kg
 
 two:
   group_box_meal_id: 1
-  name: Milch
   quantity: 1.5
-  unit: l
+  product_id: 4
