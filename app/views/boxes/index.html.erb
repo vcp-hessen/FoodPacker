@@ -14,7 +14,8 @@
                     <th>
             <%= t("activerecord.attributes.box.name", :default => t("activerecord.labels.name", :default => "Name")) %>
           </th>
-                    <th><%= t("boxes.pickup_time", :default => "Pick up time")  %></th>
+          <th><%= t("boxes.pickup_time", :default => "Pick up time")  %></th>
+          <th>&nbsp;</th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @boxes.each do |box| -%>
@@ -27,6 +28,9 @@
           </td>
                     <td>
             <%= l(box.start_time) %> - <%= l(box.end_time, :format => :only_time)%>
+          </td>
+          <td>
+            <%= link_to t('groups.plural'), list_groups_for_box_path(box) %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", box_path(box) %> |

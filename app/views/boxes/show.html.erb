@@ -23,19 +23,34 @@
           <b><%= t("activerecord.attributes.box.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
           <%= @box.name %>
         </p>
+        <hr />
         <h3><%= Box.human_attribute_name('meals') %></h3>
-		<table>
-		<% @box.meals.each do |meal| %>
-			<tr>
-				<td><%= meal.name %></td>
-				<td><%= l(meal.time) %></td>
-			</tr>
-		<% end %>
-		</table>
+        <table>
+        <% @box.meals.each do |meal| %>
+        <tr>
+          <td><%= meal.name %></td>
+          <td><%= l(meal.time) %></td>
+        </tr>
+        <% end %>
+        </table>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_box_path(@box), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), box_path(@box), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-      </div>      
+      </div>
+      <hr />
+      <h3><%= Box.human_attribute_name('groups') %></h3>
+      <table>
+      <% @groups.each do |group| %>
+      <tr>
+        <td>
+          <%= link_to group.name, calculate_group_box_with_box_path(@box.id, group_id: group.id) %>
+        </td>
+        <td>
+          <%= group.participants_count %>
+        </td>
+      </tr>
+      <% end %>
+      </table>      
     </div>
   </div>
 </div>

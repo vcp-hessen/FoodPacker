@@ -1,0 +1,29 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", boxes_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_box_path %></li>
+      <li class="active"><%= link_to "Packliste", calculate_group_box_with_box_path(@box.id, group_id: @group.id) %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      <h2><%= @group.name %> (<%= @box.name %> <%= l(@box.start_time,format: :short) %>)</h2>
+      <% @group_box.group_box_meals.each do |group_box_meal| %>
+        <h3><%= group_box_meal.meal.name %> (<%= "'#{group_box_meal.receipt_name}' for #{group_box_meal.participants_count} people" %>)</h3>
+        <table>
+		<% group_box_meal.contents.each do |content| %>
+			<tr>
+				<td><%= content.human_readable_quantity %></td>
+				<td><%= content.product.name %></td>
+			</tr>
+		<% end %>
+		</table>
+      <% end %>
+      <div class="wat-cf">
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

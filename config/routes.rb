@@ -22,8 +22,11 @@ FoodPacker::Application.routes.draw do
   
   resources :meals
   
-  resources :boxes
-
+  resources :boxes do
+    get 'groups', :on => :member, :action => 'list_groups_for_box', as: :list_groups_for
+    get 'group/:group_id', :on => :member, :action => 'calculate_box_for_group', as: :calculate_group_box_with
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

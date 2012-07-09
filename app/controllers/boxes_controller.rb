@@ -14,7 +14,8 @@ class BoxesController < ApplicationController
   # GET /boxes/1.json
   def show
     @box = Box.find(params[:id])
-
+    @groups = Group.all
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @box }
@@ -95,6 +96,32 @@ class BoxesController < ApplicationController
         }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  # GET /boxes/1/groups
+  # GET /boxes/1/groups.json
+  def list_groups_for_box
+    @box = Box.find(params[:id])
+    @groups = Group.all
+
+    respond_to do |format|
+      format.html { render :list_groups }
+      format.json { render json: @groups }
+    end
+  end
+  
+  # GET /boxes/1/group/2
+  # GET /boxes/1/group/2.json
+  def calculate_box_for_group
+    @box = Box.find(params[:id])
+    @group = Group.find(params[:group_id])
+    
+    @group_box = @box.build_calculated_box_for_group(@group)
+
+    respond_to do |format|
+      format.html { render :show_group_box }
+      format.json { render json: @group_box }
     end
   end
 end
