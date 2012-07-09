@@ -15,8 +15,7 @@
 		<table>
 		<% @receipt.ingredients.each do |ingredient| %>
 			<tr>
-				<td><%= ingredient.quantity %></td>
-				<td><%= ingredient.product.unit %></td>
+				<td><%= ingredient.human_readable_quantity %></td>
 				<td><%= ingredient.product.name %></td>
 			</tr>
 		<% end %>

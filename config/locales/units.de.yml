@@ -1,0 +1,32 @@
+
+de:
+  units:
+    g:
+      unit: "g"
+      thousand: "kg"
+      mili: "mg"
+    kg:
+      unit: "kg"
+      mili: "g"
+    l:
+      unit: "l"
+      mili: "ml"
+    ml:
+      unit: "ml"
+      thousand: "l"
+    Glas:
+      unit:
+        one: "Glas"
+        other: "Gläser"
+    Flasche:
+      unit:
+        one: "Flasche"
+        other: "Flaschen"
+    Rolle:
+      unit:
+        one: "Rolle"
+        other: "Rollen"
+    Packung:
+      unit:
+        one: "Packung"
+        other: "Packungen"

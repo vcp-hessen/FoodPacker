@@ -1,0 +1,24 @@
+
+en:
+  units:
+    g:
+      unit: "g"
+      thousand: "kg"
+      mili: "mg"
+    kg:
+      unit: "kg"
+      mili: "g"
+    l:
+      unit: "l"
+      mili: "ml"
+    ml:
+      unit: "ml"
+      thousand: "l"
+    Glas:
+      unit:
+        one: "glas"
+        other: "glasses"
+    Flasche:
+      unit:
+        one: "bottle"
+        other: "bottles"
