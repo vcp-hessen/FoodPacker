@@ -70,7 +70,20 @@ class GroupBoxMealTest < ActiveSupport::TestCase
     
     group_box_meal.contents.each do |content|
       assert_in_delta 2145.0, content.quantity, 0.001 if content.product == products(:meat)
-      assert_in_delta 1.43, content.quantity, 0.001 if content.product == products(:salt)
+      assert_in_delta 2.0, content.quantity, 0.001 if content.product == products(:salt)
+    end
+  end
+  
+  test "should alt least calculate one for every ingredient" do
+    group_box_meal = group_box_meals(:two)
+    receipt = receipts(:pork)
+    
+    group_box_meal.participants_count = 1
+    group_box_meal.build_contents_from_ingredients_hunger_factor receipt.ingredients, 0.8
+    
+    group_box_meal.contents.each do |content|
+      assert_in_delta 120.0, content.quantity, 0.001 if content.product == products(:meat)
+      assert_in_delta 1.0, content.quantity, 0.001 if content.product == products(:salt)
     end
   end
 end
