@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120708184847) do
+ActiveRecord::Schema.define(:version => 20120709065411) do
 
   create_table "boxes", :force => true do |t|
     t.datetime "start_time"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20120708184847) do
     t.integer  "participants_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "receipt_name"
   end
 
   create_table "group_boxes", :force => true do |t|

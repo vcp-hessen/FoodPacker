@@ -13,6 +13,12 @@ class GroupBoxMealTest < ActiveSupport::TestCase
     
     assert group_box_meal.meal == meals(:supper)
   end
+  
+  test "should have a receipt_name" do
+    group_box_meal = group_box_meals(:two)
+    
+    assert group_box_meal.receipt_name == "Pork"
+  end
 
   test "should have group box contents" do
     group_box_meal = group_box_meals(:one)

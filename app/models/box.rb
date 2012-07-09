@@ -13,6 +13,8 @@ class Box < ActiveRecord::Base
       receipt = group_meal.receipt
       
       group_box_meal.participants_count = group_meal.meal_participants_count
+      group_box_meal.receipt_name = receipt.name
+      
       hunger_factor = group_meal.meal_hunger_factor
       
       group_box_meal.build_contents_from_ingredients_hunger_factor receipt.ingredients, hunger_factor
