@@ -1,0 +1,47 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "Produktliste Gesamt", products_aggregate_list_path  %></li>
+    </ul>
+  </div>
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All") + " " + t('products.plural') %></h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+          <th>
+            <%= t("activerecord.attributes.product.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          </th>
+          <th>
+            <%= t("activerecord.attributes.group_box_content.quantity", :default => t("activerecord.labels.quantity", :default => "Quantity")) %>
+         </th>
+        </tr>
+        <% @products_quantities.each do |product,quantity| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= product.id %>
+          </td>
+          <td>
+            <%= link_to product.name, product_path(product) %>
+          </td>
+          <td>
+            <%= begin
+              ActionController::Base.helpers.number_to_human(quantity, :units => "units.#{product.unit}", :precision => 3)
+            rescue I18n::MissingTranslationData
+              ActionController::Base.helpers.number_to_human(quantity, :units => {unit: product.unit}, :precision => 3)
+            end %>
+          </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

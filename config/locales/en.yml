@@ -68,9 +68,13 @@ en:
       receipts: "Possible receipts for this meal. If multiple are given the choice is determined by group."
       
   boxes:
-    singular: "Kiste"
-    plural: "Kisten"
-    
+    singular: "Box"
+    plural: "Boxes"
+  
+  lists:
+    singular: "List"
+    plural: "Lists"
+      
   sessions:
     new:
       title: "Log in!"

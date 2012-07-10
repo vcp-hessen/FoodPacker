@@ -73,6 +73,10 @@ de:
     plural: "Kisten"
     pickup_time: "Abholzeit"
     
+  lists:
+    singular: "Liste"
+    plural: "Listen"
+    
   sessions:
     new:
       title: "Bitte einloggen"
