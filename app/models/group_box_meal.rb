@@ -2,6 +2,7 @@ class GroupBoxMeal < ActiveRecord::Base
   
   has_many :contents, class_name: "GroupBoxContent", dependent: :destroy
   has_one :group, through: :group_box
+  has_one :box, through: :group_box
   
   belongs_to :group_box
   belongs_to :meal

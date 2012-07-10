@@ -5,7 +5,12 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    redirect_to :action => 'products_aggregate'
+    @boxes = Box.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @boxes }
+    end
   end
 
   # GET /lists/products/aggregate
@@ -23,6 +28,65 @@ class ListsController < ApplicationController
     respond_to do |format|
       format.html # products_aggregate.html.erb
       format.json { render json: @groups }
+    end
+  end
+  
+  # GET /lists/boxes/2/groups
+  # GET /lists/boxes/2/groups.json
+  def products_box
+    contents = GroupBoxContent.find(:all,select:'group_box_contents.id,SUM(`quantity`) as quantity,product_id,group_boxes.group_id',include: [:product, :group], joins: {:group_box_meal => :group_box},conditions: {:group_boxes =>{box_id: params[:box_id]}}, group: [ :group_id, :product_id ])
+    
+    @contents_by_group = {}
+    contents.each do |content|
+      group = Group.find(content.group_id)
+      @contents_by_group[group] ||= []
+      @contents_by_group[group] << content
+    end
+    
+    respond_to do |format|
+      format.html # products_box.html.erb
+      format.json { render json: @contents_by_group }
+    end
+  end
+  
+  # GET /lists/boxes/2/groups/1
+  # GET /lists/boxes/2/groups/1.json
+  def products_box_group
+    @group_box_contents = GroupBoxContent.find(:all,select:'group_box_contents.id,SUM(`quantity`) as quantity,product_id',include: :product, joins: {:group_box_meal => :group_box},conditions: {:group_boxes =>{box_id: params[:box_id],group_id: params[:group_id]}}, group: :product_id )
+    @group = Group.find(params[:group_id])
+    
+    respond_to do |format|
+      format.html # products_box_group.html.erb
+      format.json { render json: @group_box_contents }
+    end
+  end
+  
+  # GET /lists/boxes/2/products
+  # GET /lists/boxes/2/products.json
+  def groups_box
+    contents = GroupBoxContent.find(:all,select:'group_box_contents.id,SUM(`quantity`) as quantity,product_id,group_boxes.group_id',include: [:product, :group_box_meal, :group], joins: {:group_box_meal => :group_box},conditions: {:group_boxes =>{box_id: params[:box_id]}}, group: [ :product_id, :group_id ])
+    
+    @contents_by_product = {}
+    contents.each do |content|
+      @contents_by_product[content.product] ||= []
+      @contents_by_product[content.product] << content
+    end
+    
+    respond_to do |format|
+      format.html # groups_box.html.erb
+      format.json { render json: @contents_by_product }
+    end
+  end
+  
+  # GET /lists/boxes/2/products/3
+  # GET /lists/boxes/2/products/3.json
+  def groups_box_product
+    @contents = GroupBoxContent.find(:all,select:'group_box_contents.id,SUM(`quantity`) as quantity,product_id,group_boxes.group_id',include: [:product, :group_box_meal, :group], joins: {:group_box_meal => :group_box},conditions: {:group_boxes =>{box_id: params[:box_id]},:product_id => params[:product_id]}, group: :group_id )
+    @product = Product.find(params[:product_id])
+    
+    respond_to do |format|
+      format.html # groups_box_product.html.erb
+      format.json { render json: @contents_by_product }
     end
   end
   

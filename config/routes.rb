@@ -29,8 +29,12 @@ FoodPacker::Application.routes.draw do
   end
   
   scope "/lists" do
-    get '', controller: :lists, action: :index
+    get '', controller: :lists, action: :index, as: :lists
     get 'products/aggregate', controller: :lists, action: 'products_aggregate', as: :products_aggregate_list
+    get 'boxes/:box_id/groups', controller: :lists, action: 'products_box', as: :products_box_list
+    get 'boxes/:box_id/groups/:group_id', controller: :lists, action: 'products_box_group', as: :products_box_group_list
+    get 'boxes/:box_id/products', controller: :lists, action: 'groups_box', as: :groups_box_list
+    get 'boxes/:box_id/products/:product_id', controller: :lists, action: 'groups_box_product', as: :groups_box_product_list
   end
 
   # The priority is based upon order of creation:

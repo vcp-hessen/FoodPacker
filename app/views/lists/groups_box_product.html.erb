@@ -1,0 +1,24 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("boxes.plural")}", lists_path  %></li>
+      <li class=""><%= link_to "Produktliste Gesamt", products_aggregate_list_path  %></li>
+      <li class="active"><%= link_to "Produkte Packliste", groups_box_list_path(params[:box_id])  %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      <h2><%= @product.name %></h2>
+      <table>
+        <% @contents.each do |content| %>
+        <tr>
+          <td><%= content.human_readable_quantity %></td>
+          <td><%= Group.find(content.group_id, select: :name).name %></td>
+        </tr>
+        <% end %>
+      </table>  
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

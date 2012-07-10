@@ -2,6 +2,9 @@ class GroupBoxContent < ActiveRecord::Base
 
   belongs_to :group_box_meal
   belongs_to :product
+  
+  has_one :group, through: :group_box_meal
+  has_one :box, through: :group_box_meal
 
   def human_readable_quantity
     begin
