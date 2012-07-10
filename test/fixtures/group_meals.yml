@@ -41,3 +41,10 @@ supper_45_people_0_945:
   participants_count_deviation: 3
   hunger_factor: 1.05
   receipt_id: 3
+
+another_group:
+  group_id: 5
+  meal_id: 2
+  participants_count_deviation: 0
+  hunger_factor: 1.0
+  receipt_id: 3

@@ -22,4 +22,13 @@ class BoxTest < ActiveSupport::TestCase
     assert_equal 2, group_box.group_box_meals.length
     
   end
+  
+  test "should create a box for every group with all meals calculated" do
+    box = boxes(:saturday_morning)
+    group_boxes = box.create_calculated_boxes
+    
+    assert_equal 4, group_boxes.count
+    assert_equal 6, GroupBoxMeal.count(:conditions => {:group_box_id => box.group_box_ids})
+    
+  end
 end
