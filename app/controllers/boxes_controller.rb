@@ -124,4 +124,34 @@ class BoxesController < ApplicationController
       format.json { render json: @group_box }
     end
   end
+  
+  # POST /boxes/1/groups
+  # POST /boxes/1/groups.json
+  def create_group_boxes
+    @box = Box.find(params[:id])
+    
+    @box.group_boxes.destroy_all
+    @box.create_calculated_boxes
+
+    respond_to do |format|
+      format.html { redirect_to boxes_url, notice: "Berechnung erfolgt" }
+      format.json { render json: "", status: :created }
+    end
+  end
+  
+  # POST /boxes/groups
+  # POST /boxes/groups.json
+  def create_groups_boxes
+    GroupBox.destroy_all
+    
+    Box.all.each do |box|
+      box.create_calculated_boxes
+    end
+
+    respond_to do |format|
+      format.html { redirect_to boxes_url, notice: "Berechnung erfolgt" }
+      format.json { render json: "", status: :created }
+    end
+  end
+  
 end

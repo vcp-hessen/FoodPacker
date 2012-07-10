@@ -4,3 +4,9 @@
     <p>Eine Kiste legt fest welche Mahlzeiten zusammengepackt werden und wann diese Zusammenstellung (die Kiste) abgeholt werden kann. Aus einer Kiste werden Gruppenkisten erzeugt, die dann die genaue Menge von Zutaten die für eine Gruppe zur Verfügung gestellt werden enthalten.</p>
   </div>
 </div>
+<div class="block">
+  <h3>Berechnung</h3>
+  <ul class="navigation">
+    <li><%= link_to "Komplettberechnung", create_groups_boxes_path, :method => :post, confirm: "Das wird alle bisher berechneten Listen löschen und neue Listen aus den Gruppen, Rezepten, Mahlzeiten und Kisten berechnen. Alles klar?" %></li>
+  </ul>
+</div>
