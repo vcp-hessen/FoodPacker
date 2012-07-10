@@ -11,3 +11,7 @@ soup:
 pork:
   id: 3
   name: "Pork"
+
+special:
+  id: 4
+  name: "Special purpose"

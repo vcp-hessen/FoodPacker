@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709070524) do
+ActiveRecord::Schema.define(:version => 20120710080605) do
 
   create_table "boxes", :force => true do |t|
     t.datetime "start_time"
@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(:version => 20120709070524) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "fixed_quantity"
+    t.boolean  "hunger_relevant"
   end
 
   create_table "meals", :force => true do |t|

@@ -74,7 +74,25 @@ class IngredientTest < ActiveSupport::TestCase
   test "should calculate a quantity given people count and hunger_factor < 1" do
     ingredient = ingredients(:three)
     
-    assert_in_delta 675, ingredient.calculate_quantity(for_people:5, hunger_factor:0.9)
+    assert_in_delta 675, ingredient.calculate_quantity(for_people:5, hunger_factor:0.9), 0.001
+  end
+  
+  test "should calculate fixed quantity ingredients" do
+    ingredient = ingredients(:fixed_quantity)
+    
+    assert_in_delta 2.4, ingredient.calculate_quantity(for_people:24, hunger_factor:1.6), 0.001
+  end
+  
+  test "should calculate not hunger relevant ingredients with factor > 1" do
+    ingredient = ingredients(:not_hunger_relevant)
+    
+    assert_in_delta 18, ingredient.calculate_quantity(for_people:35, hunger_factor:1.6), 0.001
+  end
+  
+  test "should calculate not hunger relevant ingredients with factor < 1" do
+    ingredient = ingredients(:not_hunger_relevant)
+    
+    assert_in_delta 15, ingredient.calculate_quantity(for_people:35, hunger_factor:0.8), 0.001
   end
   
 end

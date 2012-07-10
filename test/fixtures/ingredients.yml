@@ -4,23 +4,41 @@ one:
   quantity: 1.5
   receipt_id: 1
   product_id: 1
+  hunger_relevant: true
 
 two:
   quantity: 1.5
   receipt_id: 1
   product_id: 1
+  hunger_relevant: true
 
 three:
   quantity: 1500.0
   receipt_id: 3
   product_id: 3
+  hunger_relevant: true
 
 four:
   quantity: 1.0
   receipt_id: 3
   product_id: 4
+  hunger_relevant: true
 
 five:
   quantity: 1.0
   receipt_id: 2
   product_id: 4
+  hunger_relevant: true
+
+fixed_quantity:
+  quantity: 2.4
+  receipt_id: 4
+  product_id: 4
+  fixed_quantity: true  
+
+not_hunger_relevant:
+  quantity: 5.2
+  receipt_id: 4
+  product_id: 5
+  hunger_relevant: false
+  fixed_quantity: false
