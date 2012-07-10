@@ -10,4 +10,20 @@ class Ingredient < ActiveRecord::Base
     end
   end
   
+  def calculate_quantity(options = {})
+    raise "I need a count to calculate" if options[:for_people].nil?
+    
+    options.reverse_merge! vegetarians: options[:for_people], hunger_factor: 1.0
+    
+    result = quantity / 10 * options[:for_people] * options[:hunger_factor]
+    result = 1.0 if result < 1.0
+    round_rest = result - result.floor
+    if round_rest > 0.3
+      result = result.floor + 1
+    else
+      result = result.floor
+    end
+    
+  end
+  
 end

@@ -58,4 +58,23 @@ class IngredientTest < ActiveSupport::TestCase
     
     assert_equal "1 Flasche", ingredient.human_readable_quantity
   end
+  
+  test "should calculate a quantity given people count" do
+    ingredient = ingredients(:three)
+    
+    assert_in_delta 750, ingredient.calculate_quantity(for_people:5)
+  end
+  
+  test "should calculate a quantity given people count and hunger_factor > 1" do
+    ingredient = ingredients(:three)
+    
+    assert_in_delta 825, ingredient.calculate_quantity(for_people:5, hunger_factor:1.1)
+  end
+  
+  test "should calculate a quantity given people count and hunger_factor < 1" do
+    ingredient = ingredients(:three)
+    
+    assert_in_delta 675, ingredient.calculate_quantity(for_people:5, hunger_factor:0.9)
+  end
+  
 end
