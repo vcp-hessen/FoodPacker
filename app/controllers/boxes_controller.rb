@@ -102,18 +102,6 @@ class BoxesController < ApplicationController
     end
   end
   
-  # GET /boxes/1/groups
-  # GET /boxes/1/groups.json
-  def list_groups_for_box
-    @box = Box.find(params[:id])
-    @groups = Group.all
-
-    respond_to do |format|
-      format.html { render :list_groups }
-      format.json { render json: @groups }
-    end
-  end
-  
   # GET /boxes/1/group/2
   # GET /boxes/1/group/2.json
   def calculate_box_for_group
