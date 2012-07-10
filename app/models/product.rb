@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   
   has_many :ingredients
+  has_many :group_box_contents
   
   validates :name, :unit, presence: true
   validates :name, uniqueness: true
