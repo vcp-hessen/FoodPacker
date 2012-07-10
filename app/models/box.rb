@@ -6,7 +6,7 @@ class Box < ActiveRecord::Base
   def build_calculated_box_for_group(group)
     group_box = group_boxes.build(group: group)
     meals.each do |meal|
-      group_meal = meal.group_meals.find_by_group_id(group.id)
+      group_meal = meal.group_meals.find_by_group_id(group.id, :include => [{:receipt => :ingredients}, :meal])
       next if group_meal == nil
       
       group_box_meal = group_box.group_box_meals.build(meal:meal)
