@@ -70,6 +70,12 @@ en:
   boxes:
     singular: "Box"
     plural: "Boxes"
+    messages:
+      recalculate_all: "This will delete all lists and recreate newly calculated lists for all boxes, groups, receipts and meals. Go ahead?"
+      recalculate_box: "This will delete the lists of this box and recreate newly calculated lists for this box. Go ahead?"
+    actions:
+      calculate_box: "Calculate Box"
+      calculate_all: "Calculate all Boxes"
   
   lists:
     singular: "List"

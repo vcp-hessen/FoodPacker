@@ -7,6 +7,6 @@
 <div class="block">
   <h3>Berechnung</h3>
   <ul class="navigation">
-    <li><%= link_to "Komplettberechnung", create_groups_boxes_path, :method => :post, confirm: "Das wird alle bisher berechneten Listen löschen und neue Listen aus den Gruppen, Rezepten, Mahlzeiten und Kisten berechnen. Alles klar?" %></li>
+    <li><%= link_to t('boxes.actions.calculate_all'), create_groups_boxes_path, :method => :post, confirm: t('boxes.messages.confirm_recalculate_all') %></li>
   </ul>
 </div>

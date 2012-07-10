@@ -72,6 +72,12 @@ de:
     singular: "Kiste"
     plural: "Kisten"
     pickup_time: "Abholzeit"
+    messages:
+      confirm_recalculate_all: "Das wird alle bisher berechneten Listen löschen und neue Listen aus den Gruppen, Rezepten, Mahlzeiten und Kisten berechnen. Alles klar?"
+      confirm_recalculate_box: "Das wird alle Listen dieser Kiste löschen und neue Listen aus den Gruppen, Rezepten, Mahlzeiten für diese Kiste berechnen. Alles klar?"
+    actions:
+      calculate_box: "Kiste Berechnen"
+      calculate_all: "Komplettberechnung"
     
   lists:
     singular: "Liste"
