@@ -106,6 +106,8 @@ de:
       ingredient:
         quantity: "Menge"
         product: "Produkt"
+        hunger_relevant: "Sattmacher"
+        fixed_quantity: "feste Menge"
       group:
         participants_count: "Teilnehmerzahl"
         hunger_factor: "Mampf-Faktor"
