@@ -30,7 +30,7 @@
             <%= l(box.start_time) %> - <%= l(box.end_time, :format => :only_time)%>
           </td>
           <td>
-            <%= link_to t('groups.plural'), list_groups_for_box_path(box) %>
+            <%= link_to t('boxes.actions.calculate_box'), create_group_box_path(box), :method => :post, confirm: t('boxes.messages.confirm_recalculate_box') %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", box_path(box) %> |
