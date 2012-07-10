@@ -1,4 +1,7 @@
 class BoxesController < ApplicationController
+
+  before_filter :login_required
+
   # GET /boxes
   # GET /boxes.json
   def index
