@@ -1,7 +1,7 @@
 class Group < ActiveRecord::Base
   
-  has_many :group_meals, dependent: :destroy
-  has_many :meals, through: :group_meals
+  has_many :group_meals, dependent: :destroy, order: {:meal => :time}
+  has_many :meals, through: :group_meals, order: :time
   has_many :group_boxes, dependent: :destroy
   
   accepts_nested_attributes_for :group_meals
