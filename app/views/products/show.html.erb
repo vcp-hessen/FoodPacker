@@ -18,6 +18,13 @@
           <b><%= t("activerecord.attributes.product.unit", :default => t("activerecord.labels.unit", :default => "Unit")) %>:</b>
           <%= @product.unit %>
         </p>
+        
+        <p>
+          <b><%= t("activerecord.attributes.product.rounding_amount", :default => t("activerecord.labels.rounding_amount", :default => "Rounding Amount")) %>:</b>
+          <% if @product.rounding_amount != nil %>
+          <%= @product.rounding_amount %> <%= @product.unit %>
+          <% end %>
+        </p>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_product_path(@product), :class => "button" %> 
         <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), product_path(@product), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>

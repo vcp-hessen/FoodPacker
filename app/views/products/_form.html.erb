@@ -1,6 +1,7 @@
 <%= simple_form_for product do |f| %>
   <%= f.input :name %>
   <%= f.input :unit %>
+  <%= f.input :rounding_amount %>
 <div class="group navform wat-cf">
   <%= content_tag :button, :type => :submit, :class => 'button positive' do
 	      image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") + " " + t("web-app-theme.save", :default => "Save")

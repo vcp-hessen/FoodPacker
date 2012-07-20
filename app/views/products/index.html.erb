@@ -17,6 +17,9 @@
           <th>
             <%= t("activerecord.attributes.product.unit", :default => t("activerecord.labels.unit", :default => "Unit")) %>
          </th>
+         <th>
+            <%= t("activerecord.attributes.product.rounding_amount", :default => t("activerecord.labels.rounding_amount", :default => "Rounding Amount")) %>
+         </th>
          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
         </tr>
@@ -30,6 +33,11 @@
           </td>
           <td>
             <%= product.unit %>
+          </td>
+          <td>
+            <% if product.rounding_amount != nil %>
+            <%= product.rounding_amount %> <%= product.unit %>
+            <% end %>
           </td>
           <td>
             <%= l(product.created_at) %>

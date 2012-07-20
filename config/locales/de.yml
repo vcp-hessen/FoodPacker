@@ -124,6 +124,7 @@ de:
       product:
         name: "Name"
         unit: "Einheit"
+        rounding_amount: "Runden auf"
       meal:
         name: "Name"
         time: "Zeitpunkt"
