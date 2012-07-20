@@ -1,0 +1,19 @@
+hr.pagebreak {
+	page-break-after:always;
+	page-break-before:always;
+}
+
+table {
+	border: 1px solid black;
+	border-collapse:collapse;
+}
+td {
+	margin: 0.1 em;
+	padding: 5px;
+	border: 1px solid black;
+}
+th {
+	margin: 0.1 em;
+	padding: 5px;
+	border: 1px solid black;
+}

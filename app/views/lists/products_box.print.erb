@@ -1,0 +1,26 @@
+<div class="content">
+  <div class="inner">
+    <% @contents_by_group.keys.each do |group| %>
+    <h2><%= link_to group.name, products_box_group_list_path(group_id: group.id,box_id:params[:box_id]) %></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Menge</th><th>Produkt</th><th style="width: 7em;">eingepackt</th><th style="width: 7em;">kontrolliert</th><th style="width: 4em;">zu wenig</th><th style="width: 4em;">richtig</th><th style="width: 4em;">zu viel</th>
+        </tr>
+      </thead>
+      <% @contents_by_group[group].each do |content| %>
+      <tr>
+        <td><%= content.human_readable_quantity %></td>
+        <td><%= content.product.name %></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <% end %>
+    </table>
+    <hr class="pagebreak" />
+    <% end %>     
+  </div>
+</div>

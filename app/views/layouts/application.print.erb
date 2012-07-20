@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Packer <%= content_for?(:title) ? "- " + yield(:title) : "" %></title>
+  <%= stylesheet_link_tag 'print' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+  <div id="main">
+        <%= yield %>
+        <div id="footer">
+            <p>Copyright &copy; <%= Time.now.year %> Tobias Klonk.</p>     
+        </div>
+      </div>
+
+</body>
+</html>

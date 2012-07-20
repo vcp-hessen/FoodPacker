@@ -1,0 +1,17 @@
+        
+  <div class="content">
+    <div class="inner">
+      <% @contents_by_product.keys.each do |product| %>
+      <h2><%= link_to product.name, groups_box_product_list_path(product_id: product.id,box_id:params[:box_id]) %> (<%= @contents_sum[product] %>)</h2>
+      <table>
+        <% @contents_by_product[product].each do |content| %>
+        <tr>
+          <td><%= content.human_readable_quantity %></td>
+          <td><%= Group.find(content.group_id, select: :name).name %></td>
+        </tr>
+        <% end %>
+      </table>
+      <hr class="pagebreak" />
+      <% end %>     
+    </div>
+  </div>
