@@ -31,4 +31,12 @@ class ProductTest < ActiveSupport::TestCase
     
     assert zucker.name_with_unit == "Zucker (g)"
   end
+  
+  test "should have a rounding amount" do
+    zucker = products(:zucker)
+    
+    zucker.rounding_amount = 500
+    
+    assert zucker.valid?
+  end
 end
