@@ -1,6 +1,7 @@
 <div class="content">
   <div class="inner">
     <% @contents_by_group.keys.each do |group| %>
+    <div style="page-break-inside: avoid; page-break-after:always;">
     <h2><%= link_to group.name, products_box_group_list_path(group_id: group.id,box_id:params[:box_id]) %></h2>
     <table>
       <thead>
@@ -20,7 +21,7 @@
       </tr>
       <% end %>
     </table>
-    <hr class="pagebreak" />
+    </div>
     <% end %>     
   </div>
 </div>

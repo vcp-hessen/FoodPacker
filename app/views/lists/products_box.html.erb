@@ -8,6 +8,7 @@
   </div>          
   <div class="content">
     <div class="inner">
+      <div style="float:right"><%= link_to "Druckansicht", products_box_list_path(params[:box_id]) + ".print" %></div>
       <% @contents_by_group.keys.each do |group| %>
       <h2><%= link_to group.name, products_box_group_list_path(group_id: group.id,box_id:params[:box_id]) %></h2>
       <table>
