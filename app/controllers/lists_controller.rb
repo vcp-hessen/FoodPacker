@@ -72,6 +72,19 @@ class ListsController < ApplicationController
       @contents_by_product[content.product] << content
     end
     
+    @contents_sum = {}
+    @contents_by_product.each do |product,contents|
+      sum = 0.0
+      contents.each do |content| 
+        sum += content.quantity
+      end
+      begin
+        @contents_sum[product] = ActionController::Base.helpers.number_to_human(sum, :units => "units.#{product.unit}", :precision => 3)
+      rescue I18n::MissingTranslationData
+        @contents_sum[product] = ActionController::Base.helpers.number_to_human(sum, :units => {unit: product.unit}, :precision => 3)
+      end
+    end
+    
     respond_to do |format|
       format.html # groups_box.html.erb
       format.json { render json: @contents_by_product }
