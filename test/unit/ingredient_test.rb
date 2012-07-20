@@ -95,4 +95,22 @@ class IngredientTest < ActiveSupport::TestCase
     assert_in_delta 15, ingredient.calculate_quantity(for_people:35, hunger_factor:0.8), 0.001
   end
   
+  test "should round on products rounding amount" do
+    ingredient = ingredients(:rounding_on_500)
+    
+    assert_in_delta 1500, ingredient.calculate_quantity(for_people:40), 0.001
+  end
+  
+  test "should round up on 0.3 of rounding amount" do
+    ingredient = ingredients(:rounding_on_500)
+    
+    assert_in_delta 2000, ingredient.calculate_quantity(for_people:44), 0.001
+  end
+  
+  test "should round at least one time rounding amount" do
+    ingredient = ingredients(:rounding_on_500)
+    
+    assert_in_delta 500, ingredient.calculate_quantity(for_people:10), 0.001
+  end
+  
 end

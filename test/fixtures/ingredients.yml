@@ -42,3 +42,10 @@ not_hunger_relevant:
   product_id: 5
   hunger_relevant: false
   fixed_quantity: false
+  
+rounding_on_500:
+  quantity: 379
+  receipt_id: 4
+  product_id: 6
+  hunger_relevant: false
+  fixed_quantity: false

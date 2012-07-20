@@ -22,3 +22,9 @@ soup:
   id: 5
   name: soup
   unit: l
+
+round_500:
+  id: 6
+  name: "Fivehundered"
+  unit: pcs
+  rounding_amount: 500

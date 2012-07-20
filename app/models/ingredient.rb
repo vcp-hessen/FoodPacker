@@ -21,6 +21,11 @@ class Ingredient < ActiveRecord::Base
     
     result *= options[:hunger_factor] if hunger_relevant || (options[:hunger_factor] < 1.0)
     
+    rounding = product.rounding_amount;
+    rounding ||= 1.0
+    
+    result /= rounding
+    
     result = 1.0 if result < 1.0
     round_rest = result - result.floor
     if round_rest > 0.3
@@ -28,6 +33,8 @@ class Ingredient < ActiveRecord::Base
     else
       result = result.floor
     end
+    
+    result *= rounding
     
   end
   
