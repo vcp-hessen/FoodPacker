@@ -3,7 +3,8 @@
     <div class="inner">
       <% @contents_by_product.keys.each do |product| %>
       <div style="page-break-inside: avoid; page-break-after:always;">
-      <h2><%= link_to product.name, groups_box_product_list_path(product_id: product.id,box_id:params[:box_id]) %> (<%= @contents_sum[product] %>)</h2>
+      <p style="float:right;">Stand: <%= l(@last_updated_by_product[product]) if @last_updated_by_product[product] != nil %></p>
+      <h2><%= product.name %> (<%= @contents_sum[product] %>)</h2>
       <table>
         <thead>
           <tr>

@@ -8,7 +8,9 @@
   </div>          
   <div class="content">
     <div class="inner">
+      <div style="float:right"><%= link_to "Drucken", products_box_group_list_path(group_id: params[:group_id],box_id:params[:box_id]) + ".print" %></div>
       <h2><%= @group.name %></h2>
+      <p style="float:right;">Stand: <%= l(@last_updated) if @last_updated %></p>
       <table>
         <% @group_box_contents.each do |content| %>
         <tr>

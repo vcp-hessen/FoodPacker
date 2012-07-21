@@ -8,9 +8,10 @@
   </div>          
   <div class="content">
     <div class="inner">
-      <div style="float:right"><%= link_to "Druckansicht", groups_box_list_path(params[:box_id]) + ".print" %></div>
+      <div style="float:right"><%= link_to "Drucken", groups_box_list_path(params[:box_id]) + ".print" %></div>
       <% @contents_by_product.keys.each do |product| %>
       <h2><%= link_to product.name, groups_box_product_list_path(product_id: product.id,box_id:params[:box_id]) %> (<%= @contents_sum[product] %>)</h2>
+      <p style="float:right;">Stand: <%= l(@last_updated_by_product[product]) if @last_updated_by_product[product] != nil %></p>
       <table>
         <% @contents_by_product[product].each do |content| %>
         <tr>

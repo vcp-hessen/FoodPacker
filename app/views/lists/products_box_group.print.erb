@@ -1,16 +1,14 @@
 <div class="content">
   <div class="inner">
-    <% @contents_by_group.keys.each do |group| %>
-    <div style="page-break-inside: avoid; page-break-after:always;">
-    <p style="float:right">Stand: <%= l(@last_updated_by_group[group]) if @last_updated_by_group[group] != nil %></p>
-    <h2><%= group.name %></h2>
+    <p style="float:right">Stand: <%= l(@last_updated) if @last_updated %></p>
+    <h2><%= @group.name %></h2>
     <table>
       <thead>
         <tr>
           <th>Menge</th><th>Produkt</th><th style="width: 7em;">eingepackt</th><th style="width: 7em;">kontrolliert</th><th style="width: 4em;">zu wenig</th><th style="width: 4em;">richtig</th><th style="width: 4em;">zu viel</th>
         </tr>
       </thead>
-      <% @contents_by_group[group].each do |content| %>
+      <% @group_box_contents.each do |content| %>
       <tr>
         <td><%= content.human_readable_quantity %></td>
         <td><%= content.product.name %></td>
@@ -21,9 +19,6 @@
         <td>&nbsp;</td>
       </tr>
       <% end %>
-    </table>
-    <h3>Kommentar</h3>
-    </div>
-    <% end %>     
+    </table>    
   </div>
 </div>

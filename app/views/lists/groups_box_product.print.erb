@@ -1,0 +1,21 @@
+      
+<div class="content">
+  <div class="inner">
+    <p style="float:right;">Stand: <%= l(@last_updated) if @last_updated != nil %></p>
+    <h2><%= @product.name %> (<%= @sum %>)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Menge</th><th>Produkt</th><th style="width: 3em;">gepackt</th>
+        </tr>
+      </thead>
+      <% @contents.each do |content| %>
+      <tr>
+        <td><%= content.human_readable_quantity %></td>
+        <td><%= Group.find(content.group_id, select: :name).name %></td>
+        <td>&nbsp;</td>
+      </tr>
+      <% end %>
+    </table>    
+  </div>
+</div>
