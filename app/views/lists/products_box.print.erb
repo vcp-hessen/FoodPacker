@@ -2,12 +2,14 @@
   <div class="inner">
     <% @contents_by_group.keys.each do |group| %>
     <div style="page-break-inside: avoid; page-break-after:always;">
-    <p style="float:right">Stand: <%= l(@last_updated_by_group[group]) if @last_updated_by_group[group] != nil %></p>
+    <div style="float:right"><h3><%= @box.name %> <%= l(@box.start_time) %></h3>
+    <p style="text-align:right">Stand: <%= l(@last_updated_by_group[group]) if @last_updated_by_group[group] != nil %></p>
+    </div>
     <h2><%= group.name %></h2>
     <table>
       <thead>
         <tr>
-          <th>Menge</th><th>Produkt</th><th style="width: 7em;">eingepackt</th><th style="width: 7em;">kontrolliert</th><th style="width: 4em;">zu wenig</th><th style="width: 4em;">richtig</th><th style="width: 4em;">zu viel</th>
+          <th>Menge</th><th>Produkt</th><th style="width: 6em;">eingepackt</th><th style="width: 6em;">kontrolliert</th><th style="width: 4em;">zu wenig</th><th style="width: 4em;">richtig</th><th style="width: 4em;">zu viel</th>
         </tr>
       </thead>
       <% @contents_by_group[group].each do |content| %>

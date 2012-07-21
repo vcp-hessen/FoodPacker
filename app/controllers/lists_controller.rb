@@ -38,6 +38,8 @@ class ListsController < ApplicationController
     
     @last_updated_by_group = {}
     @contents_by_group = {}
+    @box = Box.find(params[:box_id])
+    
     contents.each do |content|
       group = Group.find(content.group_id)
       @contents_by_group[group] ||= []
@@ -56,6 +58,7 @@ class ListsController < ApplicationController
   def products_box_group
     @group_box_contents = GroupBoxContent.find(:all,select:'group_box_contents.id,SUM(`quantity`) as quantity,MAX(group_box_contents.updated_at) as updated_at,product_id',include: :product, joins: {:group_box_meal => :group_box},conditions: {:group_boxes =>{box_id: params[:box_id],group_id: params[:group_id]}}, group: :product_id )
     @group = Group.find(params[:group_id])
+    @box = Box.find(params[:box_id])
     
     @last_updated = nil
     @group_box_contents.each do |content|
