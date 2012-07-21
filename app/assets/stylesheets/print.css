@@ -6,12 +6,13 @@
 
 @media print
 {
-  .page-break  { display:block; page-break-before:always; }
+  .page-break  { display:block; page-break-after:always; }
 }
 
 table {
 	border: 1px solid black;
 	border-collapse:collapse;
+	width: 100%;
 }
 td {
 	margin: 0.1 em;
