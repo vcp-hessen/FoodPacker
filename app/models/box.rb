@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Box < ActiveRecord::Base
 
   has_and_belongs_to_many :meals
@@ -17,6 +18,15 @@ class Box < ActiveRecord::Base
       
       group_box_meal.build_contents_from_ingredients_hunger_factor receipt.ingredients, hunger_factor
     end
+    
+    special_meal = nil
+    Special.find_each(conditions:{group_id:group.id, box_id:self.id}) do |special|
+      if special_meal == nil
+        special_meal = group_box.group_box_meals.build(meal_id:999999,receipt_name:"Sonderwünsche",participants_count:group.participants_count)
+      end
+      special_meal.contents.build(product_id: special.product_id,quantity: special.quantity)
+    end
+    
     group_box
   end
   
@@ -39,7 +49,15 @@ class Box < ActiveRecord::Base
     
       group_box_meal.build_contents_from_ingredients_hunger_factor receipt.ingredients, hunger_factor
     end
-    group_boxes
+    group_boxes.each do |group_box|
+      special_meal = nil
+      Special.find_each(conditions:{group_id:group_box.group.id, box_id:self.id}) do |special|
+        if special_meal == nil
+          special_meal = group_box.group_box_meals.build(meal_id:999999,receipt_name:"Sonderwünsche",participants_count:group_box.group.participants_count)
+        end
+        special_meal.contents.build(product_id: special.product_id,quantity: special.quantity)
+      end
+    end
   end
   
   def create_calculated_boxes

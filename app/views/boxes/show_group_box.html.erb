@@ -10,7 +10,7 @@
     <div class="inner">
       <h2><%= @group.name %> (<%= @box.name %> <%= l(@box.start_time,format: :short) %>)</h2>
       <% @group_box.group_box_meals.each do |group_box_meal| %>
-        <h3><%= group_box_meal.meal.name %> (<%= "'#{group_box_meal.receipt_name}' for #{group_box_meal.participants_count} people" %>)</h3>
+        <h3><%= group_box_meal.meal.name if group_box_meal.meal != nil %> (<%= "'#{group_box_meal.receipt_name}' for #{group_box_meal.participants_count} people" %>)</h3>
         <table>
 		<% group_box_meal.contents.each do |content| %>
 			<tr>
