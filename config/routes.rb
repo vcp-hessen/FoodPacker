@@ -22,6 +22,8 @@ FoodPacker::Application.routes.draw do
   
   resources :meals
   
+  resources :specials
+  
   resources :boxes do
     get 'group/:group_id', :on => :member, :action => 'calculate_box_for_group', as: :calculate_group_box_with
     post 'group_boxes', :on => :collection, :action => 'create_groups_boxes', as: :create_groups

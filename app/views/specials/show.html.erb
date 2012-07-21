@@ -1,0 +1,39 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", specials_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_special_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", special_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.special.group_id", :default => t("activerecord.labels.group_id", :default => "Group")) %>:</b>
+          <%= @special.group_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.special.box_id", :default => t("activerecord.labels.box_id", :default => "Box")) %>:</b>
+          <%= @special.box_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.special.product_id", :default => t("activerecord.labels.product_id", :default => "Product")) %>:</b>
+          <%= @special.product_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.special.quantity", :default => t("activerecord.labels.quantity", :default => "Quantity")) %>:</b>
+          <%= @special.quantity %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_special_path(@special), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), special_path(@special), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
