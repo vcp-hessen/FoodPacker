@@ -1,15 +1,19 @@
 <%= simple_nested_form_for group do |f| %>
   <%= f.input :name, :hint => t('groups.descriptions.name') %>
-  <%= f.input :participants_count, :hint => t('groups.descriptions.participants_count') %>
+  <%= f.input :participants_count, :hint => t('groups.descriptions.participants_count'), :input_html => {onchange: "count_changed(this);", onclick:"count_changed(this);",id: "total_count"} %>
   <%= f.input :hunger_factor, :hint => t('groups.descriptions.hunger_factor') %>
-  
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      count_changed();
+    });
+  <% end %>
 <h2><%= t('meals.plural') %></h2>
 <table class="group_meals">
 	<thead>
 		<th><%= t('meals.singular') %></th>
 		<th><%= t("activerecord.attributes.meal.time") %></th>
 		<th><%= t("activerecord.attributes.group_meal.receipt") %></th>
-		<th><%= t("activerecord.attributes.group_meal.participants_count_deviation") %></th>
+		<th colspan="2"><%= t("activerecord.attributes.group_meal.participants_count_deviation") %></th>
 		<th><%= t("activerecord.attributes.group_meal.hunger_factor") %></th>
 	</thead>
 	<tbody>
@@ -18,8 +22,9 @@
     <td><%= group_meals.object.meal.name %></td>
     <td><%= l(group_meals.object.meal.time) %></td>
     <%= group_meals.association :receipt, :collection => group_meals.object.meal.receipts, :include_blank => false %>
-    <%= group_meals.input :participants_count_deviation, size: 10 %>
-    <%= group_meals.input :hunger_factor, size: 10 %>
+    <%= group_meals.input :participants_count_deviation, :input_html => {type: :number, size: 10, onchange: "count_changed(this);", onclick:"count_changed(this);"} %>
+    <td style="font-size: 1.5em;" class="meal_count">0</td>
+    <%= group_meals.input :hunger_factor, :input_html => {type: :number, step:0.1, size: 10} %>
 	</tr>
   <% end %>
 	</tbody>
