@@ -38,13 +38,32 @@ class ListsController < ApplicationController
     
     @last_updated_by_group = {}
     @contents_by_group = {}
-    @box = Box.find(params[:box_id])
+    
+    boxes = Box.all(order: :start_time)
+    @box = nil
+    @next_box = nil;
+    boxes.each do |box|
+      if ((@box != nil) && (@next_box == nil))
+        @next_box = box
+      end
+      if box.id.to_s == params[:box_id].to_s
+        @box = box
+      end
+    end
     
     contents.each do |content|
       group = Group.find(content.group_id)
+      
       @contents_by_group[group] ||= []
       @contents_by_group[group] << content
       @last_updated_by_group[group] = content.updated_at if ((@last_updated_by_group[group] == nil) || (@last_updated_by_group[group] < content.updated_at))
+    end
+    
+    @meals_by_group = {}
+    
+    @contents_by_group.keys.each do |group|
+      group_box = GroupBox.find_by_group_id_and_box_id(group.id, params[:box_id])
+      @meals_by_group[group] = group_box.group_box_meals
     end
     
     respond_to do |format|
@@ -58,7 +77,21 @@ class ListsController < ApplicationController
   def products_box_group
     @group_box_contents = GroupBoxContent.find(:all,select:'group_box_contents.id,SUM(`quantity`) as quantity,MAX(group_box_contents.updated_at) as updated_at,product_id',include: :product, joins: {:group_box_meal => :group_box},conditions: {:group_boxes =>{box_id: params[:box_id],group_id: params[:group_id]}}, group: :product_id )
     @group = Group.find(params[:group_id])
-    @box = Box.find(params[:box_id])
+    
+    boxes = Box.all(order: :start_time)
+    @box = nil
+    @next_box = nil;
+    boxes.each do |box|
+      if @box != nil && @next_box == nil
+        @next_box = box
+      end
+      if box.id.to_s == params[:box_id].to_s
+        @box = box
+      end
+    end
+    
+    group_box = GroupBox.find_by_group_id_and_box_id(@group.id, @box.id)
+    @meals = group_box.group_box_meals
     
     @last_updated = nil
     @group_box_contents.each do |content|

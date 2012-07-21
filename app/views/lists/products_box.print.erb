@@ -6,6 +6,13 @@
     <p style="text-align:right">Stand: <%= l(@last_updated_by_group[group]) if @last_updated_by_group[group] != nil %></p>
     </div>
     <h2><%= group.name %></h2>
+    <p>Diese Kiste enthält:</p>
+    <ul>
+      <% @meals_by_group[group].each do |meal| %>
+        <li><%= meal.receipt_name %> für <%= meal.participants_count %> Personen</li>
+      <% end %>
+    </ul>
+    <h3>Zutaten</h3>
     <table>
       <thead>
         <tr>
@@ -24,7 +31,27 @@
       </tr>
       <% end %>
     </table>
-    <h3>Kommentar</h3>
+    <% if @next_box != nil %>
+    <h3>Nachbestellung Grundkiste</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 6em;">Menge</th><th>Produkt</th>
+        </tr>
+      </thead>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </table>
+    <p>Bitte kreuzt in der oberen Tabelle an, wie Euch die Zutaten reichen und schreibt in die untere was Euch in der Grundkiste fehlt. Bringt die ausgefüllte Liste bei der nächsten Essensausgabe wieder mit. Die nächste Essensausgabe ist am <b><%= l(@next_box.start_time) %> - <%= l(@next_box.end_time, :format => :only_time)%>.</b></p>
+    <% else %>
+    <p>Das war schon die letzte Kiste. Vielen Dank für Euer Feedback und Eure Geduld und bis zum nächsten Landeslager.</p>
+    <% end %>
     </div>
     <% end %>     
   </div>
