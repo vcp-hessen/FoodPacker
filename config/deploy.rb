@@ -19,6 +19,8 @@ task :uberspace do
   set(:development_database) { application + "_development" }
   set(:test_database) { application + "_test" }
   set(:production_database) { user }
+  
+  set :repository,  "ssh://git@code.tonklon.com/tonklon/foodpack.git"
 end
 
 task :magerhans do
@@ -49,11 +51,12 @@ task :magerhans do
     'IRBRC' =>        "/usr/local/rvm/rubies/ruby-1.9.2-p320/.irbrc",
     'RUBYOPT' =>      ""
   }
+  
+  set :repository,  "http://food:packer@git/foodpacker.git"
 end
 
 set :deploy_via, :remote_cache
 set :scm, :git
-set :repository,  "ssh://git@code.tonklon.com/tonklon/foodpack.git"
 set :branch, 'development'
 set :scm_verbose, true
 set :use_sudo, false
