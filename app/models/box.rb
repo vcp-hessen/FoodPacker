@@ -68,5 +68,9 @@ class Box < ActiveRecord::Base
       end
     end
   end
+  
+  def name_with_date
+    name + " (" + I18n.l(start_time) + ")"
+  end
 
 end

@@ -7,7 +7,7 @@
 
   <div class="group">
     <%= f.label :box_id, t("activerecord.attributes.special.box_id", :default => "Box"), :class => :label %>
-    <%= f.collection_select :box_id, Box.all ,:id, :name%>
+    <%= f.collection_select :box_id, Box.all ,:id, :name_with_date %>
     <span class="description">Ex: a simple text</span>
   </div>
 
