@@ -6,13 +6,19 @@
     </ul>
   </div>          
   <div class="content">          
-    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Specials</h2>
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> <%= t("specials.plural")%></h2>
     <div class="inner">
       <table class="table">
         <tr>             
           <th class="first">ID</th>
                     <th>
-            <%= t("activerecord.attributes.special.group_id", :default => t("activerecord.labels.group_id", :default => "Group_id")) %>
+            <%= t("groups.singular") %>
+          </th>
+          <th>
+            <%= t("boxes.singular") %>
+          </th>
+          <th>
+            <%= t("products.singular") %>
           </th>
                     <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
           <th class="last">&nbsp;</th>
@@ -22,11 +28,17 @@
           <td>
             <%= special.id %>
           </td>
-                    <td>
-            <%= link_to special.group_id, special_path(special) %>
+          <td>
+            <%= link_to special.group.name, special_path(special) %>
           </td>
-                    <td>
-            <%= special.created_at %>
+          <td>
+            <%= link_to special.box.name, special_path(special) %>
+          </td>
+          <td>
+            <%= link_to special.human_readable_quantity + " " + special.product.name, special_path(special) %>
+          </td>
+          <td>
+            <%= l(special.created_at) %>
           </td>
           <td class="last">
             <%= link_to "#{t("web-app-theme.show", :default => "Show")}", special_path(special) %> |

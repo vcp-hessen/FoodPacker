@@ -11,22 +11,22 @@
       
         <p>
           <b><%= t("activerecord.attributes.special.group_id", :default => t("activerecord.labels.group_id", :default => "Group")) %>:</b>
-          <%= @special.group_id %>
+          <%= @special.group.name %>
         </p>
 
         <p>
           <b><%= t("activerecord.attributes.special.box_id", :default => t("activerecord.labels.box_id", :default => "Box")) %>:</b>
-          <%= @special.box_id %>
+          <%= @special.box.name %>
         </p>
 
         <p>
           <b><%= t("activerecord.attributes.special.product_id", :default => t("activerecord.labels.product_id", :default => "Product")) %>:</b>
-          <%= @special.product_id %>
+          <%= @special.product.name %>
         </p>
 
         <p>
           <b><%= t("activerecord.attributes.special.quantity", :default => t("activerecord.labels.quantity", :default => "Quantity")) %>:</b>
-          <%= @special.quantity %>
+          <%= @special.human_readable_quantity %>
         </p>
       <div class="wat-cf">
         <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_special_path(@special), :class => "button" %> 
