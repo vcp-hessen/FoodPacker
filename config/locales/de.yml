@@ -83,6 +83,10 @@ de:
     singular: "Liste"
     plural: "Listen"
     
+  specials:
+    singular: "Special"
+    plural: "Specials"
+    
   sessions:
     new:
       title: "Bitte einloggen"

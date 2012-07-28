@@ -80,6 +80,10 @@ en:
   lists:
     singular: "List"
     plural: "Lists"
+    
+  specials:
+    singular: "Special"
+    plural: "Specials"
       
   sessions:
     new:
