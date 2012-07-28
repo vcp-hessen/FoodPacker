@@ -2,6 +2,7 @@
   <div class="secondary-navigation">
     <ul class="wat-cf">
       <li class="first"><%= link_to "#{t("boxes.plural")}", lists_path  %></li>
+      <li class=""><%= link_to "Produktliste Kisten", products_overview_list_path  %></li>
       <li class=""><%= link_to "Produktliste Gesamt", products_aggregate_list_path  %></li>
       <li class="active"><%= link_to "Produkte Packliste", groups_box_list_path(params[:box_id])  %></li>
     </ul>

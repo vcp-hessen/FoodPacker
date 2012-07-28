@@ -31,6 +31,30 @@ class ListsController < ApplicationController
     end
   end
   
+  # GET /lists/products/overview
+  # GET /lists/products/overview.json
+  def products_overview
+
+    @products_quantities = {}
+    @boxes = Box.all
+
+    @boxes.each do |box|
+      quantities = GroupBoxContent.sum(:quantity,group: :product_id, conditions:{"group_boxes.box_id" => box.id},joins: :box)
+      quantities.delete_if {|key, value| value == 0 }
+
+      products = Product.all
+      products.each do |product|
+        @products_quantities[product] ||= {}
+        @products_quantities[product][box] ||= quantities[product.id]
+      end
+    end
+
+    respond_to do |format|
+      format.html # products_overview.html.erb
+      format.json { render json: @groups }
+    end
+  end
+
   # GET /lists/boxes/2/groups
   # GET /lists/boxes/2/groups.json
   def products_box
