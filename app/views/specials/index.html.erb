@@ -32,7 +32,7 @@
             <%= link_to special.group.name, special_path(special) %>
           </td>
           <td>
-            <%= link_to special.box.name, special_path(special) %>
+            <%= link_to special.box.name_with_date, special_path(special) %>
           </td>
           <td>
             <%= link_to special.human_readable_quantity + " " + special.product.name, special_path(special) %>
