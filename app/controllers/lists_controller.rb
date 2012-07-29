@@ -84,12 +84,18 @@ class ListsController < ApplicationController
     end
     
     @meals_by_group = {}
-    
+
+    @next_meals_by_group = {}
+
     @contents_by_group.keys.each do |group|
       group_box = GroupBox.find_by_group_id_and_box_id(group.id, params[:box_id])
       @meals_by_group[group] = group_box.group_box_meals
+      if @next_box != nil
+        group_box = GroupBox.find_by_group_id_and_box_id(group.id, @next_box.id)
+        @next_meals_by_group[group] = group_box.group_box_meals
+      end
     end
-    
+
     respond_to do |format|
       format.html # products_box.html.erb
       format.json { render json: @contents_by_group }
@@ -110,13 +116,19 @@ class ListsController < ApplicationController
         @next_box = box
       end
       if box.id.to_s == params[:box_id].to_s
+
         @box = box
       end
     end
     
     group_box = GroupBox.find_by_group_id_and_box_id(@group.id, @box.id)
     @meals = group_box.group_box_meals
-    
+    @next_meals = nil
+    if @next_box != nil
+      group_box = GroupBox.find_by_group_id_and_box_id(@group.id, @next_box.id)
+      @next_meals = group_box.group_box_meals
+    end
+
     @last_updated = nil
     @group_box_contents.each do |content|
       @last_updated = content.updated_at if ((@last_updated == nil) || (@last_updated < content.updated_at))
