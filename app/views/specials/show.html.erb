@@ -21,7 +21,7 @@
 
         <p>
           <b><%= t("activerecord.attributes.special.product_id", :default => t("activerecord.labels.product_id", :default => "Product")) %>:</b>
-          <%= @special.product.name %>
+          <%= @special.product.name if @special.product.present? %>
         </p>
 
         <p>
