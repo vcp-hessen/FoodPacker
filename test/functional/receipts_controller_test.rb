@@ -28,7 +28,7 @@ class ReceiptsControllerTest < ActionController::TestCase
 
   test "should create receipt" do
     assert_difference('Receipt.count') do
-      post :create, {receipt: @receipt.attributes}, {'user_id' => users(:foo).id}
+      post :create, {receipt: @receipt.attributes.except('id', 'created_at', 'updated_at')}, {'user_id' => users(:foo).id}
     end
 
     assert_redirected_to receipt_path(assigns(:receipt))
@@ -36,7 +36,7 @@ class ReceiptsControllerTest < ActionController::TestCase
   
   test "should not create receipt if not logged in" do
     assert_no_difference('Receipt.count') do
-      post :create, receipt: @receipt.attributes
+      post :create, receipt: @receipt.attributes.except('id', 'created_at', 'updated_at')
     end
 
     assert_redirected_to login_url
@@ -63,7 +63,7 @@ class ReceiptsControllerTest < ActionController::TestCase
   end
 
   test "should update receipt" do
-    put :update, {id: @receipt.to_param, receipt: @receipt.attributes}, {'user_id' => users(:foo).id}
+    put :update, {id: @receipt.to_param, receipt: @receipt.attributes.except('id','created_at','updated_at')}, {'user_id' => users(:foo).id}
     assert_redirected_to receipt_path(assigns(:receipt))
   end
   
@@ -84,7 +84,7 @@ class ReceiptsControllerTest < ActionController::TestCase
   end
   
   test "should not update receipt if not logged in" do
-    put :update, id: @receipt.to_param, receipt: @receipt.attributes
+    put :update, id: @receipt.to_param, receipt: @receipt.attributes.except('id', 'created_at', 'updated_at')
     assert_redirected_to login_url
   end
 
