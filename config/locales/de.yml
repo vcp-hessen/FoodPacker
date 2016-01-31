@@ -121,6 +121,7 @@ de:
         quantity: "Menge"
         product: "Produkt"
         hunger_relevant: "Sattmacher"
+        schmakerl: "Schmankerl"
         fixed_quantity: "feste Menge"
       group:
         participants_count: "Teilnehmerzahl"

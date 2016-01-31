@@ -13,6 +13,8 @@
   <%= ingredients_fields.collection_select :product_id, Product.all, :id, :name_with_unit %>
   <%= ingredients_fields.check_box :hunger_relevant %>
   <%= ingredients_fields.label :hunger_relevant %>
+  <%= ingredients_fields.check_box :schmakerl %>
+  <%= ingredients_fields.label :schmakerl %>
   <%= ingredients_fields.check_box :fixed_quantity %>
   <%= ingredients_fields.label :fixed_quantity %>
   <%= ingredients_fields.link_to_remove t('receipts.actions.remove_ingredient') %>

@@ -19,7 +19,7 @@ class Ingredient < ActiveRecord::Base
     
     result = quantity / 10 * options[:for_people]
     
-    result *= options[:hunger_factor] if hunger_relevant || (options[:hunger_factor] < 1.0)
+    result *= options[:hunger_factor] if hunger_relevant || (options[:hunger_factor] < 1.0) unless schmakerl
     
     rounding = product.rounding_amount;
     rounding ||= 1.0
