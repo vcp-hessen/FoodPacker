@@ -47,3 +47,5 @@ group :test do
   gem "mocha", :require => false
   gem 'test-unit-rails'
 end
+
+gem 'test-unit'

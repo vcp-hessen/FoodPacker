@@ -181,6 +181,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.6)
   simple_form
   sqlite3
+  test-unit
   test-unit-rails
   turn
   uglifier (>= 1.0.3)
