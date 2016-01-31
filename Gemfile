@@ -23,8 +23,8 @@ group :assets do
 end
 
 group :production do
-  gem 'fcgi'
   gem 'yaml_db'
+  gem 'puma'
 end
 
 gem 'jquery-rails'

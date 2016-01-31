@@ -49,7 +49,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fcgi (0.8.8)
     highline (1.6.13)
     hike (1.2.3)
     i18n (0.7.0)
@@ -76,6 +75,7 @@ GEM
       net-ssh (>= 1.99.1)
     nifty-generators (0.4.6)
     polyglot (0.3.5)
+    puma (2.16.0)
     rack (1.3.10)
     rack-cache (1.6.0)
       rack (>= 0.4)
@@ -143,11 +143,11 @@ DEPENDENCIES
   bcrypt-ruby
   capistrano
   coffee-rails (~> 3.1.1)
-  fcgi
   jquery-rails
   mocha
   nested_form
   nifty-generators
+  puma
   rails (~> 3.1.1)
   rails-i18n
   sass-rails (~> 3.1.4)
