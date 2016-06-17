@@ -1,6 +1,6 @@
 class Group < ActiveRecord::Base
   
-  has_many :group_meals, dependent: :destroy, order: {:meal => :time}
+  has_many :group_meals, dependent: :destroy, include: :meal, order: 'meals.time'
   has_many :meals, through: :group_meals, order: :time
   has_many :group_boxes, dependent: :destroy
   
