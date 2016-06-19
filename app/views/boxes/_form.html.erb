@@ -2,7 +2,7 @@
   <%= f.input :name %>
   <%= f.input :start_time, label: "Abholung von", minute_step: 15, discard_year: true %>
   <%= f.input :end_time, label: "bis", minute_step: 15, discard_year: true %>
-  <%= f.association :meals, :label_method => lambda { |meal| "#{meal.name}  (#{l(meal.time)})" } %>
+  <%= f.association :meals, :collection => Meal.order(:time), :label_method => lambda { |meal| "#{meal.name}  (#{l(meal.time)})" }, :input_html => {:size => 15} %>
 
 <div class="group navform wat-cf">
   <button class="button" type="submit">
