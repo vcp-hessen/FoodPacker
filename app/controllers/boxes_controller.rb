@@ -5,7 +5,7 @@ class BoxesController < ApplicationController
   # GET /boxes
   # GET /boxes.json
   def index
-    @boxes = Box.all
+    @boxes = Box.order(:start_time).all
 
     respond_to do |format|
       format.html # index.html.erb
