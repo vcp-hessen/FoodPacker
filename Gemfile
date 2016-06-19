@@ -14,6 +14,8 @@ gem "nested_form"
 
 gem 'simple_form'
 
+gem 'rake', '10.4.2'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

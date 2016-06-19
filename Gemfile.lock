@@ -111,7 +111,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.5.0)
+    rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
     rr (1.1.2)
@@ -178,6 +178,7 @@ DEPENDENCIES
   puma
   rails (~> 3.2.22)
   rails-i18n
+  rake (= 10.4.2)
   sass-rails (~> 3.2.6)
   simple_form
   sqlite3
