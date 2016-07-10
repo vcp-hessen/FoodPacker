@@ -14,7 +14,7 @@
     <table>
       <thead>
         <tr>
-          <th>Menge</th><th>Produkt</th><th style="width: 6em;">eingepackt</th><th style="width: 6em;">kontrolliert</th><th style="width: 4em;">zu wenig</th><th style="width: 4em;">richtig</th><th style="width: 4em;">zu viel</th>
+          <th>Menge</th><th>Produkt</th><th style="width: 6em;">eingepackt</th><th style="width: 6em;">kontrolliert</th>
         </tr>
       </thead>
       <% @group_box_contents.each do |content| %>
@@ -23,14 +23,11 @@
         <td><%= content.product.name %></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
       </tr>
       <% end %>
     </table>
     <% if @next_box != nil %>
-    <h3>Nachbestellung Grundkiste</h2>
+    <h3>Nachbestellung Grundkiste</h3>
     <table>
       <thead>
         <tr>
@@ -41,7 +38,7 @@
       <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
       <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
     </table>
-    <p>Bitte kreuzt in der oberen Tabelle an, wie Euch die Zutaten reichen und schreibt in die untere was Euch in der Grundkiste fehlt. Bringt die ausgefüllte Liste bei der nächsten Essensausgabe wieder mit.</p><p>Die nächste Essensausgabe ist am <b><%= l(@next_box.start_time) %> - <%= l(@next_box.end_time, :format => :only_time)%></b> und enhält:</p>
+    <p>Bitte schreibt in die Tabelle was Euch in der Grundkiste fehlt. Bringt die ausgefüllte Liste bei der nächsten Essensausgabe wieder mit.</p><p>Die nächste Essensausgabe ist am <b><%= l(@next_box.start_time) %> - <%= l(@next_box.end_time, :format => :only_time)%></b> und enhält:</p>
     <ul>
       <% @next_meals.each do |meal| %>
       <li><%= meal.receipt_name %> für <%= meal.participants_count %> Personen</li>
