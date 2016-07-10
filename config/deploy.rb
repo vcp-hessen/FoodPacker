@@ -11,7 +11,7 @@ task :uberspace do
 
   set :deploy_to, "/var/www/virtual/#{user}/foodpacker"
 
-  set :repository,  "ssh://git@code.tonklon.com/tonklon/foodpack.git"
+  set :repository,  "git@github.com:tonklon/FoodPacker.git"
 end
 
 
